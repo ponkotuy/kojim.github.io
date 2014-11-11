@@ -1,0 +1,624 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="UTF-8"><title>FactorioCalculator</title><script type="text/javascript" src="C:\Program Files (x86)\Elm Platform\0.12.3\share\elm-runtime.js"></script><script type="text/javascript">Elm.Main = Elm.Main || {};
+Elm.Main.make = function (_elm) {
+   "use strict";
+   _elm.Main = _elm.Main || {};
+   if (_elm.Main.values)
+   return _elm.Main.values;
+   var _N = Elm.Native,
+   _U = _N.Utils.make(_elm),
+   _L = _N.List.make(_elm),
+   _A = _N.Array.make(_elm),
+   _E = _N.Error.make(_elm),
+   $moduleName = "Main";
+   var Basics = Elm.Basics.make(_elm);
+   var Color = Elm.Color.make(_elm);
+   var Dict = Elm.Dict.make(_elm);
+   var Graphics = Graphics || {};
+   Graphics.Collage = Elm.Graphics.Collage.make(_elm);
+   var Graphics = Graphics || {};
+   Graphics.Element = Elm.Graphics.Element.make(_elm);
+   var Graphics = Graphics || {};
+   Graphics.Input = Elm.Graphics.Input.make(_elm);
+   var Graphics = Graphics || {};
+   Graphics.Input = Graphics.Input || {};
+   Graphics.Input.Field = Elm.Graphics.Input.Field.make(_elm);
+   var List = Elm.List.make(_elm);
+   var Maybe = Elm.Maybe.make(_elm);
+   var Native = Native || {};
+   Native.Json = Elm.Native.Json.make(_elm);
+   var Native = Native || {};
+   Native.Ports = Elm.Native.Ports.make(_elm);
+   var Signal = Elm.Signal.make(_elm);
+   var String = Elm.String.make(_elm);
+   var Text = Elm.Text.make(_elm);
+   var Time = Elm.Time.make(_elm);
+   var _op = {};
+   var roundFloat = function (f) {
+      return Basics.toFloat(Basics.round(f * 100)) / 100;
+   };
+   var toElement$ = function (_v0) {
+      return function () {
+         switch (_v0.ctor)
+         {case "_Tuple2":
+            return A2(Graphics.Element.flow,
+              Graphics.Element.right,
+              _L.fromArray([A4(Graphics.Element.container,
+                           200,
+                           30,
+                           Graphics.Element.middle,
+                           Text.leftAligned(Text.toText(_v0._0)))
+                           ,A4(Graphics.Element.container,
+                           200,
+                           30,
+                           Graphics.Element.middle,
+                           Text.rightAligned(Text.toText(String.show(roundFloat(_v0._1)))))]));}
+         _E.Case($moduleName,
+         "between lines 369 and 372");
+      }();
+   };
+   var toElement = function (rfs) {
+      return A2(Graphics.Element.flow,
+      Graphics.Element.down,
+      A2(List.map,toElement$,rfs));
+   };
+   var item_count = Graphics.Input.input(0.1);
+   var Resource = function (a) {
+      return {ctor: "Resource"
+             ,_0: a};
+   };
+   var iron_plate = Resource({_: {}
+                             ,ingredients: _L.fromArray([])
+                             ,name: "鉄板(個数)"
+                             ,req_time: 1
+                             ,result_count: 1});
+   var item_type = Graphics.Input.input(iron_plate);
+   var copper_plate = Resource({_: {}
+                               ,ingredients: _L.fromArray([])
+                               ,name: "銅板(個数)"
+                               ,req_time: 1
+                               ,result_count: 1});
+   var coal = Resource({_: {}
+                       ,ingredients: _L.fromArray([])
+                       ,name: "石炭(個数)"
+                       ,req_time: 1
+                       ,result_count: 1});
+   var petroleum_gas = Resource({_: {}
+                                ,ingredients: _L.fromArray([])
+                                ,name: "プロパンガス(個数)"
+                                ,req_time: 1
+                                ,result_count: 1});
+   var water = Resource({_: {}
+                        ,ingredients: _L.fromArray([])
+                        ,name: "水(個数)"
+                        ,req_time: 1
+                        ,result_count: 1});
+   var heavy_oil = Resource({_: {}
+                            ,ingredients: _L.fromArray([])
+                            ,name: "重油(個数)"
+                            ,req_time: 1
+                            ,result_count: 1});
+   var lubricant = Resource({_: {}
+                            ,ingredients: _L.fromArray([])
+                            ,name: "潤滑油(個数)"
+                            ,req_time: 1
+                            ,result_count: 1});
+   var iron_gear_wheel = Resource({_: {}
+                                  ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                              ,_0: iron_plate
+                                                              ,_1: 2}])
+                                  ,name: "歯車"
+                                  ,req_time: 0.5
+                                  ,result_count: 1});
+   var copper_cable = Resource({_: {}
+                               ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                           ,_0: copper_plate
+                                                           ,_1: 1}])
+                               ,name: "銅線"
+                               ,req_time: 0.5
+                               ,result_count: 2});
+   var steel_plate = Resource({_: {}
+                              ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                          ,_0: iron_plate
+                                                          ,_1: 5}])
+                              ,name: "鋼材"
+                              ,req_time: 17.5
+                              ,result_count: 1});
+   var pipe = Resource({_: {}
+                       ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                   ,_0: iron_plate
+                                                   ,_1: 1}])
+                       ,name: "パイプ"
+                       ,req_time: 0.5
+                       ,result_count: 1});
+   var electronic_circuit = Resource({_: {}
+                                     ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                                 ,_0: iron_plate
+                                                                 ,_1: 1}
+                                                                ,{ctor: "_Tuple2"
+                                                                 ,_0: copper_cable
+                                                                 ,_1: 3}])
+                                     ,name: "電子回路"
+                                     ,req_time: 0.5
+                                     ,result_count: 1});
+   var basic_transport_belt = Resource({_: {}
+                                       ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                                   ,_0: iron_plate
+                                                                   ,_1: 1}
+                                                                  ,{ctor: "_Tuple2"
+                                                                   ,_0: iron_gear_wheel
+                                                                   ,_1: 1}])
+                                       ,name: "ベルトコンベア"
+                                       ,req_time: 0.5
+                                       ,result_count: 2});
+   var basic_inserter = Resource({_: {}
+                                 ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                             ,_0: electronic_circuit
+                                                             ,_1: 1}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: iron_gear_wheel
+                                                             ,_1: 1}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: iron_plate
+                                                             ,_1: 1}])
+                                 ,name: "インサーター"
+                                 ,req_time: 0.5
+                                 ,result_count: 1});
+   var fast_inserter = Resource({_: {}
+                                ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                            ,_0: electronic_circuit
+                                                            ,_1: 2}
+                                                           ,{ctor: "_Tuple2"
+                                                            ,_0: iron_plate
+                                                            ,_1: 2}
+                                                           ,{ctor: "_Tuple2"
+                                                            ,_0: basic_inserter
+                                                            ,_1: 1}])
+                                ,name: "高速インサーター"
+                                ,req_time: 0.5
+                                ,result_count: 1});
+   var smart_inserter = Resource({_: {}
+                                 ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                             ,_0: fast_inserter
+                                                             ,_1: 1}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: electronic_circuit
+                                                             ,_1: 4}])
+                                 ,name: "スマートインサーター"
+                                 ,req_time: 0.5
+                                 ,result_count: 1});
+   var plastic_bar = Resource({_: {}
+                              ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                          ,_0: coal
+                                                          ,_1: 1}
+                                                         ,{ctor: "_Tuple2"
+                                                          ,_0: petroleum_gas
+                                                          ,_1: 3}])
+                              ,name: "プラスチック棒"
+                              ,req_time: 1
+                              ,result_count: 2});
+   var advanced_circuit = Resource({_: {}
+                                   ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                               ,_0: electronic_circuit
+                                                               ,_1: 2}
+                                                              ,{ctor: "_Tuple2"
+                                                               ,_0: plastic_bar
+                                                               ,_1: 2}
+                                                              ,{ctor: "_Tuple2"
+                                                               ,_0: copper_cable
+                                                               ,_1: 4}])
+                                   ,name: "発展回路"
+                                   ,req_time: 8
+                                   ,result_count: 1});
+   var sulfur = Resource({_: {}
+                         ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                     ,_0: water
+                                                     ,_1: 3}
+                                                    ,{ctor: "_Tuple2"
+                                                     ,_0: petroleum_gas
+                                                     ,_1: 3}])
+                         ,name: "硫黄"
+                         ,req_time: 1
+                         ,result_count: 2});
+   var sulfuric_acid = Resource({_: {}
+                                ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                            ,_0: sulfur
+                                                            ,_1: 2}
+                                                           ,{ctor: "_Tuple2"
+                                                            ,_0: iron_plate
+                                                            ,_1: 1}
+                                                           ,{ctor: "_Tuple2"
+                                                            ,_0: water
+                                                            ,_1: 5}])
+                                ,name: "硫酸"
+                                ,req_time: 1
+                                ,result_count: 5});
+   var processing_unit = Resource({_: {}
+                                  ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                              ,_0: electronic_circuit
+                                                              ,_1: 20}
+                                                             ,{ctor: "_Tuple2"
+                                                              ,_0: advanced_circuit
+                                                              ,_1: 2}
+                                                             ,{ctor: "_Tuple2"
+                                                              ,_0: sulfuric_acid
+                                                              ,_1: 0.5}])
+                                  ,name: "制御基盤"
+                                  ,req_time: 8
+                                  ,result_count: 1});
+   var battery = Resource({_: {}
+                          ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                      ,_0: sulfuric_acid
+                                                      ,_1: 2}
+                                                     ,{ctor: "_Tuple2"
+                                                      ,_0: iron_plate
+                                                      ,_1: 1}
+                                                     ,{ctor: "_Tuple2"
+                                                      ,_0: copper_plate
+                                                      ,_1: 1}])
+                          ,name: "電池"
+                          ,req_time: 5
+                          ,result_count: 1});
+   var engine_unit = Resource({_: {}
+                              ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                          ,_0: steel_plate
+                                                          ,_1: 1}
+                                                         ,{ctor: "_Tuple2"
+                                                          ,_0: iron_gear_wheel
+                                                          ,_1: 1}
+                                                         ,{ctor: "_Tuple2"
+                                                          ,_0: pipe
+                                                          ,_1: 2}])
+                              ,name: "エンジンユニット"
+                              ,req_time: 20
+                              ,result_count: 1});
+   var electric_engine_unit = Resource({_: {}
+                                       ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                                   ,_0: engine_unit
+                                                                   ,_1: 1}
+                                                                  ,{ctor: "_Tuple2"
+                                                                   ,_0: lubricant
+                                                                   ,_1: 2}
+                                                                  ,{ctor: "_Tuple2"
+                                                                   ,_0: electronic_circuit
+                                                                   ,_1: 2}])
+                                       ,name: "電気エンジンユニット"
+                                       ,req_time: 20
+                                       ,result_count: 1});
+   var flying_robot_frame = Resource({_: {}
+                                     ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                                 ,_0: electric_engine_unit
+                                                                 ,_1: 1}
+                                                                ,{ctor: "_Tuple2"
+                                                                 ,_0: battery
+                                                                 ,_1: 2}
+                                                                ,{ctor: "_Tuple2"
+                                                                 ,_0: steel_plate
+                                                                 ,_1: 1}
+                                                                ,{ctor: "_Tuple2"
+                                                                 ,_0: electronic_circuit
+                                                                 ,_1: 3}])
+                                     ,name: "飛行ロボットフレーム"
+                                     ,req_time: 20
+                                     ,result_count: 1});
+   var science_pack_1 = Resource({_: {}
+                                 ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                             ,_0: copper_plate
+                                                             ,_1: 1}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: iron_gear_wheel
+                                                             ,_1: 1}])
+                                 ,name: "サイエンスパック1"
+                                 ,req_time: 5
+                                 ,result_count: 1});
+   var science_pack_2 = Resource({_: {}
+                                 ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                             ,_0: basic_transport_belt
+                                                             ,_1: 1}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: basic_inserter
+                                                             ,_1: 1}])
+                                 ,name: "サイエンスパック2"
+                                 ,req_time: 6
+                                 ,result_count: 1});
+   var science_pack_3 = Resource({_: {}
+                                 ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                             ,_0: battery
+                                                             ,_1: 1}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: advanced_circuit
+                                                             ,_1: 1}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: smart_inserter
+                                                             ,_1: 1}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: steel_plate
+                                                             ,_1: 1}])
+                                 ,name: "サイエンスパック3"
+                                 ,req_time: 12
+                                 ,result_count: 1});
+   var resources = _L.fromArray([iron_gear_wheel
+                                ,copper_cable
+                                ,steel_plate
+                                ,pipe
+                                ,electronic_circuit
+                                ,advanced_circuit
+                                ,basic_transport_belt
+                                ,basic_inserter
+                                ,fast_inserter
+                                ,smart_inserter
+                                ,plastic_bar
+                                ,sulfur
+                                ,sulfuric_acid
+                                ,battery
+                                ,engine_unit
+                                ,electric_engine_unit
+                                ,flying_robot_frame
+                                ,science_pack_1
+                                ,science_pack_2
+                                ,science_pack_3]);
+   var all_resources = _L.append(_L.fromArray([iron_plate
+                                              ,copper_plate
+                                              ,coal
+                                              ,petroleum_gas
+                                              ,water
+                                              ,heavy_oil
+                                              ,lubricant]),
+   resources);
+   var calc = F2(function (_v4,
+   require_ps) {
+      return function () {
+         switch (_v4.ctor)
+         {case "Resource":
+            return function () {
+                 var running_ps = 1 / _v4._0.req_time;
+                 var product_per_unit = _v4._0.result_count / _v4._0.req_time;
+                 var units = require_ps / product_per_unit;
+                 return {ctor: "::"
+                        ,_0: {ctor: "_Tuple2"
+                             ,_0: Resource(_v4._0)
+                             ,_1: units}
+                        ,_1: A2(List.concatMap,
+                        function (_v7) {
+                           return function () {
+                              switch (_v7.ctor)
+                              {case "_Tuple2": return A2(calc,
+                                   _v7._0,
+                                   _v7._1 * units * running_ps);}
+                              _E.Case($moduleName,
+                              "on line 380, column 54 to 80");
+                           }();
+                        },
+                        _v4._0.ingredients)};
+              }();}
+         _E.Case($moduleName,
+         "between lines 377 and 380");
+      }();
+   });
+   var mergeResults$ = function (rfs) {
+      return A2(List.map,
+      function (_v11) {
+         return function () {
+            switch (_v11.ctor)
+            {case "_Tuple2":
+               switch (_v11._0.ctor)
+                 {case "Resource":
+                    return {ctor: "_Tuple2"
+                           ,_0: _v11._0._0.name
+                           ,_1: _v11._1};}
+                 break;}
+            _E.Case($moduleName,
+            "on line 395, column 46 to 54");
+         }();
+      },
+      rfs);
+   };
+   var toId = function (name) {
+      return function () {
+         var indexed_resource = A2(List.zip,
+         _L.range(1,100),
+         all_resources);
+         var id_r = A2(List.filter,
+         function (_v16) {
+            return function () {
+               switch (_v16.ctor)
+               {case "_Tuple2":
+                  switch (_v16._1.ctor)
+                    {case "Resource":
+                       return _U.eq(_v16._1._0.name,
+                         name);}
+                    break;}
+               _E.Case($moduleName,
+               "on line 404, column 41 to 55");
+            }();
+         },
+         indexed_resource);
+         return Basics.fst(List.head(id_r));
+      }();
+   };
+   var mergeResults = function (rfs) {
+      return function () {
+         var nfs = A2(List.map,
+         function (_v21) {
+            return function () {
+               switch (_v21.ctor)
+               {case "_Tuple2":
+                  switch (_v21._0.ctor)
+                    {case "Resource":
+                       return {ctor: "_Tuple2"
+                              ,_0: _v21._0._0.name
+                              ,_1: _v21._1};}
+                    break;}
+               _E.Case($moduleName,
+               "on line 385, column 40 to 49");
+            }();
+         },
+         rfs);
+         var dict = A3(List.foldl,
+         F2(function (_v26,dict) {
+            return function () {
+               switch (_v26.ctor)
+               {case "_Tuple2":
+                  return function () {
+                       var sum = A3(Dict.getOrElse,
+                       0,
+                       _v26._0,
+                       dict);
+                       return A3(Dict.insert,
+                       _v26._0,
+                       sum + _v26._1,
+                       dict);
+                    }();}
+               _E.Case($moduleName,
+               "between lines 387 and 388");
+            }();
+         }),
+         Dict.empty,
+         nfs);
+         var list = Dict.toList(dict);
+         return A2(List.sortBy,
+         function (_v30) {
+            return function () {
+               switch (_v30.ctor)
+               {case "_Tuple2":
+                  return toId(_v30._0);}
+               _E.Case($moduleName,
+               "on line 391, column 27 to 36");
+            }();
+         },
+         list);
+      }();
+   };
+   var display = F2(function (item,
+   require_ps) {
+      return A2(Graphics.Element.color,
+      Color.grey,
+      A4(Graphics.Element.container,
+      500,
+      800,
+      Graphics.Element.middle,
+      A2(Graphics.Element.flow,
+      Graphics.Element.down,
+      _L.fromArray([A2(Graphics.Element.color,
+                   Color.lightGrey,
+                   A2(Graphics.Element.flow,
+                   Graphics.Element.down,
+                   _L.fromArray([A2(Graphics.Element.flow,
+                                Graphics.Element.right,
+                                _L.fromArray([A4(Graphics.Element.container,
+                                             200,
+                                             30,
+                                             Graphics.Element.middle,
+                                             Text.leftAligned(Text.toText("作りたいもの")))
+                                             ,A4(Graphics.Element.container,
+                                             200,
+                                             30,
+                                             Graphics.Element.middle,
+                                             A2(Graphics.Input.dropDown,
+                                             item_type.handle,
+                                             A2(List.map,
+                                             function (_v34) {
+                                                return function () {
+                                                   switch (_v34.ctor)
+                                                   {case "Resource":
+                                                      return {ctor: "_Tuple2"
+                                                             ,_0: _v34._0.name
+                                                             ,_1: Resource(_v34._0)};}
+                                                   _E.Case($moduleName,
+                                                   "on line 344, column 96 to 114");
+                                                }();
+                                             },
+                                             resources)))]))
+                                ,A2(Graphics.Element.flow,
+                                Graphics.Element.right,
+                                _L.fromArray([A4(Graphics.Element.container,
+                                             200,
+                                             30,
+                                             Graphics.Element.middle,
+                                             Text.leftAligned(Text.toText("秒間いくつ作る？")))
+                                             ,A4(Graphics.Element.container,
+                                             200,
+                                             30,
+                                             Graphics.Element.middle,
+                                             A2(Graphics.Input.dropDown,
+                                             item_count.handle,
+                                             A2(List.map,
+                                             function (n) {
+                                                return {ctor: "_Tuple2"
+                                                       ,_0: String.show(n)
+                                                       ,_1: n};
+                                             },
+                                             _L.fromArray([0.1
+                                                          ,0.25
+                                                          ,0.5
+                                                          ,1
+                                                          ,4
+                                                          ,10
+                                                          ,30]))))]))])))
+                   ,A2(Graphics.Element.flow,
+                   Graphics.Element.down,
+                   _L.fromArray([A2(Graphics.Element.flow,
+                                Graphics.Element.right,
+                                _L.fromArray([A4(Graphics.Element.container,
+                                             200,
+                                             30,
+                                             Graphics.Element.middle,
+                                             Text.leftAligned(Text.toText("必要な組立機")))
+                                             ,A4(Graphics.Element.container,
+                                             200,
+                                             30,
+                                             Graphics.Element.middle,
+                                             Text.leftAligned(Text.toText("数")))]))
+                                ,toElement(mergeResults(A2(calc,
+                                item,
+                                require_ps)))]))]))));
+   });
+   var main = A3(Signal.lift2,
+   display,
+   item_type.signal,
+   item_count.signal);
+   _elm.Main.values = {_op: _op
+                      ,iron_plate: iron_plate
+                      ,copper_plate: copper_plate
+                      ,coal: coal
+                      ,petroleum_gas: petroleum_gas
+                      ,water: water
+                      ,heavy_oil: heavy_oil
+                      ,lubricant: lubricant
+                      ,iron_gear_wheel: iron_gear_wheel
+                      ,copper_cable: copper_cable
+                      ,steel_plate: steel_plate
+                      ,pipe: pipe
+                      ,electronic_circuit: electronic_circuit
+                      ,advanced_circuit: advanced_circuit
+                      ,processing_unit: processing_unit
+                      ,basic_transport_belt: basic_transport_belt
+                      ,basic_inserter: basic_inserter
+                      ,fast_inserter: fast_inserter
+                      ,smart_inserter: smart_inserter
+                      ,plastic_bar: plastic_bar
+                      ,sulfur: sulfur
+                      ,sulfuric_acid: sulfuric_acid
+                      ,battery: battery
+                      ,engine_unit: engine_unit
+                      ,electric_engine_unit: electric_engine_unit
+                      ,flying_robot_frame: flying_robot_frame
+                      ,science_pack_1: science_pack_1
+                      ,science_pack_2: science_pack_2
+                      ,science_pack_3: science_pack_3
+                      ,all_resources: all_resources
+                      ,resources: resources
+                      ,main: main
+                      ,item_type: item_type
+                      ,item_count: item_count
+                      ,display: display
+                      ,toElement: toElement
+                      ,toElement$: toElement$
+                      ,calc: calc
+                      ,mergeResults: mergeResults
+                      ,mergeResults$: mergeResults$
+                      ,roundFloat: roundFloat
+                      ,toId: toId
+                      ,Resource: Resource};
+   return _elm.Main.values;
+};</script></head><body><script type="text/javascript">Elm.fullscreen(Elm.Main)</script><noscript></noscript></body></html>
