@@ -54,7 +54,7 @@ Elm.Main.make = function (_elm) {
                            Graphics.Element.middle,
                            Text.rightAligned(Text.toText(String.show(roundFloat(_v0._1)))))]));}
          _E.Case($moduleName,
-         "between lines 369 and 372");
+         "between lines 478 and 481");
       }();
    };
    var toElement = function (rfs) {
@@ -103,6 +103,11 @@ Elm.Main.make = function (_elm) {
                             ,name: "潤滑油(個数)"
                             ,req_time: 1
                             ,result_count: 1});
+   var alien_artifact = Resource({_: {}
+                                 ,ingredients: _L.fromArray([])
+                                 ,name: "エイリアンアーティファクト(個数)"
+                                 ,req_time: 1
+                                 ,result_count: 1});
    var iron_gear_wheel = Resource({_: {}
                                   ,ingredients: _L.fromArray([{ctor: "_Tuple2"
                                                               ,_0: iron_plate
@@ -337,12 +342,130 @@ Elm.Main.make = function (_elm) {
                                  ,name: "サイエンスパック3"
                                  ,req_time: 12
                                  ,result_count: 1});
+   var speed_module1 = Resource({_: {}
+                                ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                            ,_0: electronic_circuit
+                                                            ,_1: 5}
+                                                           ,{ctor: "_Tuple2"
+                                                            ,_0: advanced_circuit
+                                                            ,_1: 5}])
+                                ,name: "生産速度モジュール1"
+                                ,req_time: 15
+                                ,result_count: 1});
+   var speed_module2 = Resource({_: {}
+                                ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                            ,_0: speed_module1
+                                                            ,_1: 4}
+                                                           ,{ctor: "_Tuple2"
+                                                            ,_0: advanced_circuit
+                                                            ,_1: 5}
+                                                           ,{ctor: "_Tuple2"
+                                                            ,_0: processing_unit
+                                                            ,_1: 5}])
+                                ,name: "生産速度モジュール2"
+                                ,req_time: 30
+                                ,result_count: 1});
+   var speed_module3 = Resource({_: {}
+                                ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                            ,_0: speed_module2
+                                                            ,_1: 4}
+                                                           ,{ctor: "_Tuple2"
+                                                            ,_0: advanced_circuit
+                                                            ,_1: 5}
+                                                           ,{ctor: "_Tuple2"
+                                                            ,_0: processing_unit
+                                                            ,_1: 5}
+                                                           ,{ctor: "_Tuple2"
+                                                            ,_0: alien_artifact
+                                                            ,_1: 1}])
+                                ,name: "生産速度モジュール3"
+                                ,req_time: 60
+                                ,result_count: 1});
+   var productivity_module1 = Resource({_: {}
+                                       ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                                   ,_0: electronic_circuit
+                                                                   ,_1: 5}
+                                                                  ,{ctor: "_Tuple2"
+                                                                   ,_0: advanced_circuit
+                                                                   ,_1: 5}])
+                                       ,name: "エネルギー効率モジュール1"
+                                       ,req_time: 15
+                                       ,result_count: 1});
+   var productivity_module2 = Resource({_: {}
+                                       ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                                   ,_0: productivity_module1
+                                                                   ,_1: 4}
+                                                                  ,{ctor: "_Tuple2"
+                                                                   ,_0: advanced_circuit
+                                                                   ,_1: 5}
+                                                                  ,{ctor: "_Tuple2"
+                                                                   ,_0: processing_unit
+                                                                   ,_1: 5}])
+                                       ,name: "エネルギー効率モジュール2"
+                                       ,req_time: 30
+                                       ,result_count: 1});
+   var productivity_module3 = Resource({_: {}
+                                       ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                                   ,_0: productivity_module2
+                                                                   ,_1: 4}
+                                                                  ,{ctor: "_Tuple2"
+                                                                   ,_0: advanced_circuit
+                                                                   ,_1: 5}
+                                                                  ,{ctor: "_Tuple2"
+                                                                   ,_0: processing_unit
+                                                                   ,_1: 5}
+                                                                  ,{ctor: "_Tuple2"
+                                                                   ,_0: alien_artifact
+                                                                   ,_1: 1}])
+                                       ,name: "エネルギー効率モジュール3"
+                                       ,req_time: 60
+                                       ,result_count: 1});
+   var effectivity_module1 = Resource({_: {}
+                                      ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                                  ,_0: electronic_circuit
+                                                                  ,_1: 5}
+                                                                 ,{ctor: "_Tuple2"
+                                                                  ,_0: advanced_circuit
+                                                                  ,_1: 5}])
+                                      ,name: "効率化モジュール1"
+                                      ,req_time: 15
+                                      ,result_count: 1});
+   var effectivity_module2 = Resource({_: {}
+                                      ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                                  ,_0: effectivity_module1
+                                                                  ,_1: 4}
+                                                                 ,{ctor: "_Tuple2"
+                                                                  ,_0: advanced_circuit
+                                                                  ,_1: 5}
+                                                                 ,{ctor: "_Tuple2"
+                                                                  ,_0: processing_unit
+                                                                  ,_1: 5}])
+                                      ,name: "効率化モジュール2"
+                                      ,req_time: 30
+                                      ,result_count: 1});
+   var effectivity_module3 = Resource({_: {}
+                                      ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                                  ,_0: effectivity_module2
+                                                                  ,_1: 4}
+                                                                 ,{ctor: "_Tuple2"
+                                                                  ,_0: advanced_circuit
+                                                                  ,_1: 5}
+                                                                 ,{ctor: "_Tuple2"
+                                                                  ,_0: processing_unit
+                                                                  ,_1: 5}
+                                                                 ,{ctor: "_Tuple2"
+                                                                  ,_0: alien_artifact
+                                                                  ,_1: 1}])
+                                      ,name: "効率化モジュール3"
+                                      ,req_time: 60
+                                      ,result_count: 1});
    var resources = _L.fromArray([iron_gear_wheel
                                 ,copper_cable
                                 ,steel_plate
                                 ,pipe
                                 ,electronic_circuit
                                 ,advanced_circuit
+                                ,processing_unit
                                 ,basic_transport_belt
                                 ,basic_inserter
                                 ,fast_inserter
@@ -356,14 +479,24 @@ Elm.Main.make = function (_elm) {
                                 ,flying_robot_frame
                                 ,science_pack_1
                                 ,science_pack_2
-                                ,science_pack_3]);
+                                ,science_pack_3
+                                ,speed_module1
+                                ,speed_module2
+                                ,speed_module3
+                                ,productivity_module1
+                                ,productivity_module2
+                                ,productivity_module3
+                                ,effectivity_module1
+                                ,effectivity_module2
+                                ,effectivity_module3]);
    var all_resources = _L.append(_L.fromArray([iron_plate
                                               ,copper_plate
                                               ,coal
                                               ,petroleum_gas
                                               ,water
                                               ,heavy_oil
-                                              ,lubricant]),
+                                              ,lubricant
+                                              ,alien_artifact]),
    resources);
    var calc = F2(function (_v4,
    require_ps) {
@@ -386,13 +519,13 @@ Elm.Main.make = function (_elm) {
                                    _v7._0,
                                    _v7._1 * units * running_ps);}
                               _E.Case($moduleName,
-                              "on line 380, column 54 to 80");
+                              "on line 489, column 54 to 80");
                            }();
                         },
                         _v4._0.ingredients)};
               }();}
          _E.Case($moduleName,
-         "between lines 377 and 380");
+         "between lines 486 and 489");
       }();
    });
    var mergeResults$ = function (rfs) {
@@ -408,7 +541,7 @@ Elm.Main.make = function (_elm) {
                            ,_1: _v11._1};}
                  break;}
             _E.Case($moduleName,
-            "on line 395, column 46 to 54");
+            "on line 504, column 46 to 54");
          }();
       },
       rfs);
@@ -429,7 +562,7 @@ Elm.Main.make = function (_elm) {
                          name);}
                     break;}
                _E.Case($moduleName,
-               "on line 404, column 41 to 55");
+               "on line 513, column 41 to 55");
             }();
          },
          indexed_resource);
@@ -450,7 +583,7 @@ Elm.Main.make = function (_elm) {
                               ,_1: _v21._1};}
                     break;}
                _E.Case($moduleName,
-               "on line 385, column 40 to 49");
+               "on line 494, column 40 to 49");
             }();
          },
          rfs);
@@ -470,7 +603,7 @@ Elm.Main.make = function (_elm) {
                        dict);
                     }();}
                _E.Case($moduleName,
-               "between lines 387 and 388");
+               "between lines 496 and 497");
             }();
          }),
          Dict.empty,
@@ -483,7 +616,7 @@ Elm.Main.make = function (_elm) {
                {case "_Tuple2":
                   return toId(_v30._0);}
                _E.Case($moduleName,
-               "on line 391, column 27 to 36");
+               "on line 500, column 27 to 36");
             }();
          },
          list);
@@ -525,7 +658,7 @@ Elm.Main.make = function (_elm) {
                                                              ,_0: _v34._0.name
                                                              ,_1: Resource(_v34._0)};}
                                                    _E.Case($moduleName,
-                                                   "on line 344, column 96 to 114");
+                                                   "on line 453, column 96 to 114");
                                                 }();
                                              },
                                              resources)))]))
@@ -585,6 +718,7 @@ Elm.Main.make = function (_elm) {
                       ,water: water
                       ,heavy_oil: heavy_oil
                       ,lubricant: lubricant
+                      ,alien_artifact: alien_artifact
                       ,iron_gear_wheel: iron_gear_wheel
                       ,copper_cable: copper_cable
                       ,steel_plate: steel_plate
@@ -606,6 +740,15 @@ Elm.Main.make = function (_elm) {
                       ,science_pack_1: science_pack_1
                       ,science_pack_2: science_pack_2
                       ,science_pack_3: science_pack_3
+                      ,speed_module1: speed_module1
+                      ,speed_module2: speed_module2
+                      ,speed_module3: speed_module3
+                      ,productivity_module1: productivity_module1
+                      ,productivity_module2: productivity_module2
+                      ,productivity_module3: productivity_module3
+                      ,effectivity_module1: effectivity_module1
+                      ,effectivity_module2: effectivity_module2
+                      ,effectivity_module3: effectivity_module3
                       ,all_resources: all_resources
                       ,resources: resources
                       ,main: main
