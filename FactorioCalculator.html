@@ -54,7 +54,7 @@ Elm.Main.make = function (_elm) {
                            Graphics.Element.middle,
                            Text.rightAligned(Text.toText(String.show(roundFloat(_v0._1)))))]));}
          _E.Case($moduleName,
-         "between lines 478 and 481");
+         "between lines 533 and 536");
       }();
    };
    var toElement = function (rfs) {
@@ -251,6 +251,19 @@ Elm.Main.make = function (_elm) {
                                   ,name: "制御基盤"
                                   ,req_time: 8
                                   ,result_count: 1});
+   var explosives = Resource({_: {}
+                             ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                         ,_0: sulfur
+                                                         ,_1: 1}
+                                                        ,{ctor: "_Tuple2"
+                                                         ,_0: coal
+                                                         ,_1: 1}
+                                                        ,{ctor: "_Tuple2"
+                                                         ,_0: water
+                                                         ,_1: 1}])
+                             ,name: "火薬"
+                             ,req_time: 5
+                             ,result_count: 1});
    var battery = Resource({_: {}
                           ,ingredients: _L.fromArray([{ctor: "_Tuple2"
                                                       ,_0: sulfuric_acid
@@ -459,6 +472,57 @@ Elm.Main.make = function (_elm) {
                                       ,name: "効率化モジュール3"
                                       ,req_time: 60
                                       ,result_count: 1});
+   var rocket = Resource({_: {}
+                         ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                     ,_0: electronic_circuit
+                                                     ,_1: 1}
+                                                    ,{ctor: "_Tuple2"
+                                                     ,_0: explosives
+                                                     ,_1: 2}
+                                                    ,{ctor: "_Tuple2"
+                                                     ,_0: iron_plate
+                                                     ,_1: 2}])
+                         ,name: "ロケット弾"
+                         ,req_time: 8
+                         ,result_count: 1});
+   var power_armor_mk2 = Resource({_: {}
+                                  ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                              ,_0: effectivity_module3
+                                                              ,_1: 5}
+                                                             ,{ctor: "_Tuple2"
+                                                              ,_0: speed_module3
+                                                              ,_1: 5}
+                                                             ,{ctor: "_Tuple2"
+                                                              ,_0: processing_unit
+                                                              ,_1: 200}
+                                                             ,{ctor: "_Tuple2"
+                                                              ,_0: steel_plate
+                                                              ,_1: 50}
+                                                             ,{ctor: "_Tuple2"
+                                                              ,_0: alien_artifact
+                                                              ,_1: 50}])
+                                  ,name: "パワーアーマーMK2"
+                                  ,req_time: 25
+                                  ,result_count: 1});
+   var rocket_defense = Resource({_: {}
+                                 ,ingredients: _L.fromArray([{ctor: "_Tuple2"
+                                                             ,_0: rocket
+                                                             ,_1: 100}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: advanced_circuit
+                                                             ,_1: 150}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: processing_unit
+                                                             ,_1: 100}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: speed_module3
+                                                             ,_1: 50}
+                                                            ,{ctor: "_Tuple2"
+                                                             ,_0: productivity_module3
+                                                             ,_1: 50}])
+                                 ,name: "防衛ミサイル"
+                                 ,req_time: 0.5
+                                 ,result_count: 1});
    var resources = _L.fromArray([iron_gear_wheel
                                 ,copper_cable
                                 ,steel_plate
@@ -473,6 +537,7 @@ Elm.Main.make = function (_elm) {
                                 ,plastic_bar
                                 ,sulfur
                                 ,sulfuric_acid
+                                ,explosives
                                 ,battery
                                 ,engine_unit
                                 ,electric_engine_unit
@@ -488,7 +553,10 @@ Elm.Main.make = function (_elm) {
                                 ,productivity_module3
                                 ,effectivity_module1
                                 ,effectivity_module2
-                                ,effectivity_module3]);
+                                ,effectivity_module3
+                                ,rocket
+                                ,power_armor_mk2
+                                ,rocket_defense]);
    var all_resources = _L.append(_L.fromArray([iron_plate
                                               ,copper_plate
                                               ,coal
@@ -519,13 +587,13 @@ Elm.Main.make = function (_elm) {
                                    _v7._0,
                                    _v7._1 * units * running_ps);}
                               _E.Case($moduleName,
-                              "on line 489, column 54 to 80");
+                              "on line 544, column 54 to 80");
                            }();
                         },
                         _v4._0.ingredients)};
               }();}
          _E.Case($moduleName,
-         "between lines 486 and 489");
+         "between lines 541 and 544");
       }();
    });
    var mergeResults$ = function (rfs) {
@@ -541,7 +609,7 @@ Elm.Main.make = function (_elm) {
                            ,_1: _v11._1};}
                  break;}
             _E.Case($moduleName,
-            "on line 504, column 46 to 54");
+            "on line 559, column 46 to 54");
          }();
       },
       rfs);
@@ -562,7 +630,7 @@ Elm.Main.make = function (_elm) {
                          name);}
                     break;}
                _E.Case($moduleName,
-               "on line 513, column 41 to 55");
+               "on line 568, column 41 to 55");
             }();
          },
          indexed_resource);
@@ -583,7 +651,7 @@ Elm.Main.make = function (_elm) {
                               ,_1: _v21._1};}
                     break;}
                _E.Case($moduleName,
-               "on line 494, column 40 to 49");
+               "on line 549, column 40 to 49");
             }();
          },
          rfs);
@@ -603,7 +671,7 @@ Elm.Main.make = function (_elm) {
                        dict);
                     }();}
                _E.Case($moduleName,
-               "between lines 496 and 497");
+               "between lines 551 and 552");
             }();
          }),
          Dict.empty,
@@ -616,7 +684,7 @@ Elm.Main.make = function (_elm) {
                {case "_Tuple2":
                   return toId(_v30._0);}
                _E.Case($moduleName,
-               "on line 500, column 27 to 36");
+               "on line 555, column 27 to 36");
             }();
          },
          list);
@@ -658,7 +726,7 @@ Elm.Main.make = function (_elm) {
                                                              ,_0: _v34._0.name
                                                              ,_1: Resource(_v34._0)};}
                                                    _E.Case($moduleName,
-                                                   "on line 453, column 96 to 114");
+                                                   "on line 508, column 96 to 114");
                                                 }();
                                              },
                                              resources)))]))
@@ -733,6 +801,7 @@ Elm.Main.make = function (_elm) {
                       ,plastic_bar: plastic_bar
                       ,sulfur: sulfur
                       ,sulfuric_acid: sulfuric_acid
+                      ,explosives: explosives
                       ,battery: battery
                       ,engine_unit: engine_unit
                       ,electric_engine_unit: electric_engine_unit
@@ -749,6 +818,9 @@ Elm.Main.make = function (_elm) {
                       ,effectivity_module1: effectivity_module1
                       ,effectivity_module2: effectivity_module2
                       ,effectivity_module3: effectivity_module3
+                      ,rocket: rocket
+                      ,power_armor_mk2: power_armor_mk2
+                      ,rocket_defense: rocket_defense
                       ,all_resources: all_resources
                       ,resources: resources
                       ,main: main
