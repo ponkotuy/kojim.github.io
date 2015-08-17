@@ -16,15 +16,14 @@ elmで実装してありソースコードは[こちら](https://github.com/koji
 具体的には、銅と鉄をベルトコンベアで流し、必要となるインサータや電子回路等の中間部品はその場で生産する。
 
 # 設計コレクション
+## 石炭発電所
+![石炭発電所](./images/factorio/line_coalplant.png)
+
 ## サイエンスパック1 & サイエンスパック2 & スマートインサータ
-![サイエンスパック1 & サイエンスパック2 & スマートインサータ]()
+![サイエンスパック1 & サイエンスパック2 & スマートインサータ](../images/factorio/line_sp12.png)
 
 ## 原油コンビナート
-![原油コンビナート]()
-
-
-## ライン1 (
-## 
+![原油コンビナート](./images/factorio/line_oil.png)
 
 # おまけ
 data\base\graphics\icons\alien-artifact.png 差し替え画像。
