@@ -28,5 +28,9 @@ elmで実装してありソースコードは[こちら](https://github.com/koji
 
 # おまけ
 data\base\graphics\icons\alien-artifact.png 差し替え画像。
+
 ![クッソ汚いエイリアンアーティファクト](../images/factorio/alien-artifact.png)
-使用例 ![使用例](../images/factorio/alien-artifact-ss.png)
+
+使用例
+
+![使用例](../images/factorio/alien-artifact-ss.png)
