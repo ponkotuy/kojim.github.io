@@ -271,6 +271,9 @@ title: Factorio自分用プレイメモ
 # チートとか
 微妙すぎる性能のランプは、 data\base\prototypes\entity\demo-entities.lua の name = "small-lamp" 付近の light = {intensity = 0.9, size = 40} の値を変更してやることで強化することができる。200くらいにして遊ぶのが個人的にはオススメ。
 
+ロボポートの範囲狭すぎだよって人は、data\base\prototypes\entity\entities.lua の name = "roboport" 付近の logistics_radius = 25, construction_radius = 50 あたりを修正すれば広げられる。個人的にはlogistics_radiusは50で良いと思う。
+
+
 # おまけ
 data\base\graphics\icons\alien-artifact.png 差し替え画像。  
 ![クッソ汚いエイリアンアーティファクト](../images/factorio/alien-artifact.png)
