@@ -265,14 +265,12 @@ title: Factorio自分用プレイメモ
 精錬は、電気掘削機20で採掘した鉱石をベルトコンベア1の両側に乗せて運搬し、電気炉18で精錬するのが良い。
 ベルトコンベア2を使えばもっと流量は増やせるが、縦に長すぎるラインは扱いが面倒。
 
-
-
-
 # チートとか
 微妙すぎる性能のランプは、 data\base\prototypes\entity\demo-entities.lua の name = "small-lamp" 付近の light = {intensity = 0.9, size = 40} の値を変更してやることで強化することができる。200くらいにして遊ぶのが個人的にはオススメ。
 
 ロボポートの範囲狭すぎだよって人は、data\base\prototypes\entity\entities.lua の name = "roboport" 付近の logistics_radius = 25, construction_radius = 50 あたりを修正すれば広げられる。個人的にはlogistics_radiusは50で良いと思う。
 
+撤去計画で木材だけ選ぶの面倒だよ、最初から撤去計画持たせてくれよ、って人は、ゲーム開始直後にコンソールを開いて  /c game.local_player.get_inventory(1).insert{name = "deconstruction-planner", count = 1} と打ち込むべし。
 
 # おまけ
 data\base\graphics\icons\alien-artifact.png 差し替え画像。  
