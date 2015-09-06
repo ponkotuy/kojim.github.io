@@ -38,7 +38,7 @@ describe("Oil", function() {
 });
 describe("Dependency", function() {
 	it("鉄板秒間0個に必要な素材はなし", function() {
-		expect({}).toEqual(iron_plate.require_ingredient_count(0, []));
+		expect({"鉄鉱石":0, "鉄板":0}).toEqual(iron_plate.require_ingredient_count(0, []));
 	});
 	it("鉄板秒間1個に必要な素材は鉄板と鉄鉱石", function() {
 		expect({"鉄鉱石":1, "鉄板":1}).toEqual(iron_plate.require_ingredient_count(1, []));
@@ -55,11 +55,12 @@ describe("Dependency", function() {
 	});
 	it("SP1秒間1個に必要な素材(歯車搬入)", function() {
 		var ing = science_pack_1.require_ingredient_count(1, ['歯車']);
-		expect(4).toEqual(Object.keys(ing).length);
+		expect(6).toEqual(Object.keys(ing).length);
 		expect(1).toBeCloseTo(ing['銅鉱石'], 1);
 		expect(1).toBeCloseTo(ing['銅板']  , 1);
+		expect(0).toBeCloseTo(ing['鉄鉱石'], 1);
+		expect(0).toBeCloseTo(ing['鉄板']  , 1);
 		expect(1).toBeCloseTo(ing['歯車']  , 1);
 		expect(1.00000).toBeCloseTo(ing['サイエンスパック1'], 2);
 	});
 });
-

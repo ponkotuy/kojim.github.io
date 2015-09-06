@@ -16,18 +16,12 @@ Product.prototype = {
 	 */
 	require_ingredient_count: function(product_per_sec, import_ingredients) {
 		var thiz = this;
+		// 各素材の生産量を計算
 		// map   : [{鉄:毎秒1}, {銅:毎秒2, 鉄:毎秒1}], {}] のようなリストを作る。
 		// reduce: {鉄:毎秒3, 銅:毎秒2} ハッシュを作る。
 		var result = this.ingredients.map(function(i) {
 			var ingredient       = i[0]
 			var ingredient_count = i[1];
-
-			// 素材が搬入品に含まれていれば素材の素材の作成は不要
-			if ($.inArray(ingredient.name, import_ingredients) !== -1) {
-				var result = {};
-				result[ingredient.name] = ingredient_count;
-				return result;
-			}
 			// 計算式:
 			//   施設1つあたりの必要素材数
 			//   / ビルド時間
@@ -46,9 +40,14 @@ Product.prototype = {
 			});
 			return pre;
 		}, {});
-		if (product_per_sec != 0) {
-			result[this.name] = product_per_sec;
+		// 素材が搬入品に含まれていれば素材の素材の生産量は0に
+		if ($.inArray(this.name, import_ingredients) !== -1) {
+			$.each(Object.keys(result), function(i, name) {
+				result[name] = 0;
+			});
 		}
+		// 自分自身の生産量を付け足す
+		result[this.name] = product_per_sec;
 		return result;
 	}
 };
@@ -62,6 +61,7 @@ var AssemblyProduct = function(name, req_time, result_count, ingredients) {
 };
 AssemblyProduct.prototype = new Product();
 AssemblyProduct.prototype.build_rate = 0.75;
+AssemblyProduct.prototype.energy_usage = 150;
 
 // 化学プラントで作るもの
 var ChemicalProduct = function(name, req_time, result_count, ingredients) {
@@ -72,6 +72,18 @@ var ChemicalProduct = function(name, req_time, result_count, ingredients) {
 };
 ChemicalProduct.prototype = new Product();
 ChemicalProduct.prototype.build_rate = 1.25;
+ChemicalProduct.prototype.energy_usage = 210;
+
+// 原油採掘
+var PumpJack = function(name, req_time, result_count, ingredients) {
+	this.name         = name;
+	this.req_time     = req_time;
+	this.result_count = result_count;
+	this.ingredients  = ingredients;
+};
+PumpJack.prototype = new Product();
+PumpJack.prototype.build_rate = 1;
+PumpJack.prototype.energy_usage = 90;
 
 // 原油精製
 var OilRefinery = function(name, req_time, result_count, ingredients) {
@@ -82,6 +94,7 @@ var OilRefinery = function(name, req_time, result_count, ingredients) {
 };
 OilRefinery.prototype = new Product();
 OilRefinery.prototype.build_rate = 1;
+OilRefinery.prototype.energy_usage = 420;
 
 // 採掘機で掘り出すもの
 var Ore = function(name, hardness, req_time) {
@@ -91,6 +104,7 @@ var Ore = function(name, hardness, req_time) {
 };
 Ore.prototype = new Product();
 Ore.prototype.ingredients = [];
+Ore.prototype.energy_usage = 90;
 Ore.prototype.require_builder_count =  function(product_per_sec) {
 	var power = 3;
 	var speed = 0.5;
@@ -106,6 +120,7 @@ var MetalPlate = function(name, req_time, result_count, ingredients) {
 };
 MetalPlate.prototype = new Product();
 MetalPlate.prototype.build_rate = 2;
+MetalPlate.prototype.energy_usage = 180;
 
 
 // -------------------------------------------
@@ -123,6 +138,9 @@ var copper_ore = new Ore(
 var coal = new Ore(
   "石炭", 0.9, 2
 );
+var stone = new Ore(
+  "石", 0.4, 2
+);
 
 // -----------------
 // 精錬系
@@ -133,6 +151,9 @@ var iron_plate = new MetalPlate(
 var copper_plate = new MetalPlate(
   "銅板", 3.5, 1, [[copper_ore, 1]]
 );
+var stone_brick = new MetalPlate(
+  "石レンガ", 3.5, 1, [[stone, 2]]
+);
 var steel_plate = new MetalPlate(
   "鋼材", 17.5, 1, [[iron_plate, 5]]
 );
@@ -140,7 +161,7 @@ var steel_plate = new MetalPlate(
 // -----------------
 // 原油系
 // -----------------
-var crude_oil = new OilRefinery(
+var crude_oil = new PumpJack(
   "原油", 1, 5, []
 );
 var petroleum_gas = new OilRefinery(
@@ -283,6 +304,9 @@ var effectivity_module3 = new AssemblyProduct(
 // -----------------
 // 戦闘系
 // -----------------
+var stone_wall = new AssemblyProduct(
+  "石壁", 0.5, 1, [[stone_brick, 5]]
+);
 var laser_turret = new AssemblyProduct(
   "レーザータレット", 20, 1, [[steel_plate, 20], [electronic_circuit, 20], [battery, 12]]
 );
@@ -294,7 +318,8 @@ var power_armor_mk2 = new AssemblyProduct(
 );
 
 var products = [
-	iron_ore, copper_ore, coal, iron_plate, copper_plate, steel_plate, crude_oil, petroleum_gas, light_oil, heavy_oil, lubricant,
+	iron_ore, copper_ore, coal, stone, iron_plate, copper_plate, stone_brick, steel_plate,
+	crude_oil, petroleum_gas, light_oil, heavy_oil, lubricant,
 	iron_gear_wheel, copper_cable, pipe, electronic_circuit, advanced_circuit, processing_unit,
 	basic_transport_belt, basic_inserter, fast_inserter, smart_inserter,
 	plastic_bar, sulfur, sulfuric_acid, explosives,
@@ -304,7 +329,7 @@ var products = [
 	speed_module1, speed_module2, speed_module3,
 	productivity_module1, productivity_module2, productivity_module3,
 	effectivity_module1, effectivity_module2, effectivity_module3,
-	laser_turret, rocket, power_armor_mk2
+	stone_wall, laser_turret, rocket, power_armor_mk2
 ];
 
 function getProductByName(name) {
