@@ -227,6 +227,16 @@ var flying_robot_frame = new AssemblyProduct(
 );
 
 // -----------------
+// 電気系
+// -----------------
+var solar_panel = new AssemblyProduct(
+  "ソーラーパネル", 10, 1, [[steel_plate, 5], [electronic_circuit, 15], [copper_plate, 5]]
+);
+var basic_accumulator = new AssemblyProduct(
+  "蓄電池", 10, 1, [[iron_plate, 2], [battery, 5]]
+);
+
+// -----------------
 // サイエンスパック
 // -----------------
 var science_pack_1 = new AssemblyProduct(
@@ -273,12 +283,14 @@ var effectivity_module3 = new AssemblyProduct(
 // -----------------
 // 戦闘系
 // -----------------
+var laser_turret = new AssemblyProduct(
+  "レーザータレット", 20, 1, [[steel_plate, 20], [electronic_circuit, 20], [battery, 12]]
+);
 var rocket = new AssemblyProduct(
   "ロケット弾", 8, 1, [[electronic_circuit, 1], [explosives, 2], [iron_plate, 2]]
 );
 var power_armor_mk2 = new AssemblyProduct(
-  "パワーアーマーMK2", 25, 1,
-  [[effectivity_module3, 5], [speed_module3, 5], [processing_unit, 200], [steel_plate, 50]]
+  "パワーアーマーMK2", 25, 1, [[effectivity_module3, 5], [speed_module3, 5], [processing_unit, 200], [steel_plate, 50]]
 );
 
 var products = [
@@ -287,8 +299,12 @@ var products = [
 	basic_transport_belt, basic_inserter, fast_inserter, smart_inserter,
 	plastic_bar, sulfur, sulfuric_acid, explosives,
 	battery, engine_unit, electric_engine_unit, flying_robot_frame,
+	solar_panel, basic_accumulator,
 	science_pack_1, science_pack_2, science_pack_3,
-	speed_module1, speed_module2, speed_module3, productivity_module1, productivity_module2, productivity_module3, effectivity_module1, effectivity_module2, effectivity_module3
+	speed_module1, speed_module2, speed_module3,
+	productivity_module1, productivity_module2, productivity_module3,
+	effectivity_module1, effectivity_module2, effectivity_module3,
+	laser_turret, rocket, power_armor_mk2
 ];
 
 function getProductByName(name) {
