@@ -279,4 +279,4 @@ data\base\graphics\icons\alien-artifact.png 差し替え画像。
 使用例  
 ![使用例](../images/factorio/alien-artifact-ss.png)
 
-<iframe width="420" src="http://kojim.github.io/FactorioCalculator.html" frameborder="1"></iframe>
+<iframe width="600" src="http://kojim.github.io/FactorioCalculator.html" frameborder="1"></iframe>
