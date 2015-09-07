@@ -278,3 +278,7 @@ data\base\graphics\icons\alien-artifact.png 差し替え画像。
 
 使用例  
 ![使用例](../images/factorio/alien-artifact-ss.png)
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+<iframe width="420" height="315" src="http://kojim.github.io/js/factorio/index.html" frameborder="0"></iframe>
+
