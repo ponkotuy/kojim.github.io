@@ -91,12 +91,8 @@ title: Factorio自分用プレイメモ
         * 鉄(ベルトコンベア1/秒間10個)
         * 銅(ベルトコンベア1/秒間10個)
     * 生産物
-        * SP1
-            * 秒間生産: 1個(組立機数:5)
-            * 秒間消費: 鉄2, 銅1
-        * SP2
-            * 秒間生産: 1個(組立機数:6)
-            * 秒間消費: 鉄5.5, 銅1.5
+        * [SP1(毎秒0.75個)](http://kojim.github.io/FactorioCalculator.html?product=%E3%82%B5%E3%82%A4%E3%82%A8%E3%83%B3%E3%82%B9%E3%83%91%E3%83%83%E3%82%AF1&cps=0.75&imports=%E9%8A%85%E6%9D%BF_%E9%89%84%E6%9D%BF)
+        * [SP2(毎秒0.75個)](http://kojim.github.io/FactorioCalculator.html?product=%E3%82%B5%E3%82%A4%E3%82%A8%E3%83%B3%E3%82%B9%E3%83%91%E3%83%83%E3%82%AF2&cps=0.75&imports=%E9%89%84%E6%9D%BF_%E9%8A%85%E6%9D%BF)
         * 日用品
             * 電柱
             * ベルトコンベア1
@@ -115,15 +111,9 @@ title: Factorio自分用プレイメモ
         * プロパンガス
         * 潤滑油
     * 生産物
-        * 電池
-            * 秒間生産: 2個(組立機数:10)
-            * 秒間消費: 鉄2, 銅2, プロパンガス
-        * プラスチック
-            * 秒間生産: 8個(組立機数:4)
-            * 秒間消費: 石炭4, プロパンガス
-        * 飛行ロボットフレーム
-            * 秒間生産: 0.1個(組立機数:2)
-            * 秒間消費: 鉄0.8, 銅0.45
+        * [電池(毎秒2個)](http://kojim.github.io/FactorioCalculator.html?product=%E9%9B%BB%E6%B1%A0&cps=2&imports=%E9%89%84%E6%9D%BF_%E9%8A%85%E6%9D%BF)
+        * [プラスチック(毎秒8個)](http://kojim.github.io/FactorioCalculator.html?product=%E3%83%97%E3%83%A9%E3%82%B9%E3%83%81%E3%83%83%E3%82%AF%E6%A3%92&cps=8&imports=)
+        * [飛行ロボットフレーム(毎秒0.1個)](http://kojim.github.io/FactorioCalculator.html?product=%E9%A3%9B%E8%A1%8C%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0&cps=0.1&imports=%E9%89%84%E6%9D%BF_%E9%9B%BB%E6%B1%A0_%E7%A1%AB%E9%85%B8_%E7%A1%AB%E9%BB%84_%E3%83%97%E3%83%AD%E3%83%91%E3%83%B3%E3%82%AC%E3%82%B9_%E6%BD%A4%E6%BB%91%E6%B2%B9_%E9%87%8D%E6%B2%B9_%E5%8E%9F%E6%B2%B9_%E9%89%84%E9%89%B1%E7%9F%B3)
     * 備考
         * SP3製造ラインが電池を毎秒1消費するので、蓄電池やレーザータレットの生産に使えるのはその余り。
         * 飛行ロボットフレームは2ライン用意するとストレスが少ない。
@@ -279,4 +269,3 @@ data\base\graphics\icons\alien-artifact.png 差し替え画像。
 使用例  
 ![使用例](../images/factorio/alien-artifact-ss.png)
 
-<iframe width="600" src="http://kojim.github.io/FactorioCalculator.html" frameborder="1"></iframe>
