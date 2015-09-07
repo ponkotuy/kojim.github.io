@@ -13,8 +13,8 @@ describe("Ore", function() {
 	it("鉄鉱石秒間0個に必要な採掘機数は0", function() {
 		expect(0).toEqual(iron_ore.require_builder_count(0));
 	});
-	it("鉄鉱石秒間1.9個に必要な採掘機数は約1", function() {
-		expect(1).toBeCloseTo(iron_ore.require_builder_count(1.9), 2);
+	it("鉄鉱石秒間0.526個に必要な採掘機数は約1", function() {
+		expect(1).toBeCloseTo(iron_ore.require_builder_count(0.526), 2);
 	});
 });
 describe("MetalPlate", function() {

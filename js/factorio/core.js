@@ -108,7 +108,7 @@ Ore.prototype.energy_usage = 90;
 Ore.prototype.require_builder_count =  function(product_per_sec) {
 	var power = 3;
 	var speed = 0.5;
-	return product_per_sec / (this.req_time / ((power - this.hardness) * speed));
+	return product_per_sec / (((power - this.hardness) * speed) / this.req_time);
 };
 
 // 溶鉱炉で作るもの
