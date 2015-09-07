@@ -79,11 +79,25 @@ var Product = React.createClass({
               '&cps=' + this.state.cps +
               '&imports=' + encodeURI(this.state.imports.join('_'));
     var parentonly = (
-      <p>
-        現在の設定のURL:  <input type='text' value={url}/> <br/>
-        <a href='http://kojim.github.io/Factorio%E8%87%AA%E5%88%86%E7%94%A8%E3%83%A1%E3%83%A2/'>戻る</a><br/>
-        <a href='http://kojim.github.io/FactorioCalculator_help.html'>ヘルプ</a>
-      </p>
+      <div>
+        <h3>その他</h3>
+        <ul>
+          <li>各種設備は電気採掘機, 電気炉, 組立機2, 原油精製所(発展的な石油加工) を使用することを想定。</li>
+          <li>油井は1つあたり5/sの原油を排出するものとする。</li>
+          <li>水, エイリアンアーティファクトは無限にあるものとしツール上では無視。</li>
+          <li>自分で使うものしかデータ登録してないのでこれが欲しいって人は <a href="https://twitter.com/kojim">@kojim</a> まで。</li>
+          <li>データ古いよとか計算間違ってるよとかの指摘も歓迎</li>
+          <li>iframeタグを使うとこのページを自身のブログ内等に埋め込めます。その際は「その他」以降の情報は表示されなくなるので安心。
+            <pre>
+              例: &lt;iframe width="600" src="http://kojim.github.io/FactorioCalculator.html?product=%E9%8A%85%E7%B7%9A&cps=3.3&imports=%E9%8A%85%E9%89%B1%E7%9F%B3_%E9%8A%85%E6%9D%BF" frameborder="1"&gt;&lt;/iframe&gt;
+            </pre>
+          </li>
+        </ul>
+        <p>
+          現在の設定へのリンクURL:  <input type='text' value={url}/> <br/>
+          <a href='http://kojim.github.io/Factorio%E8%87%AA%E5%88%86%E7%94%A8%E3%83%A1%E3%83%A2/'>戻る</a><br/>
+        </p>
+      </div>
     );
     return (
       <div>
