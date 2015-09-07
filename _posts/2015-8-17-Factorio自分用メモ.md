@@ -212,9 +212,9 @@ title: Factorio自分用プレイメモ
 
 ロボポートの範囲狭すぎだよって人は、data\base\prototypes\entity\entities.lua の name = "roboport" 付近の logistics_radius = 25, construction_radius = 50 あたりを修正すれば広げられる。個人的にはlogistics_radiusは50で良いと思う。
 
-撤去計画で木材だけ選ぶの面倒だよ、最初から撤去計画持たせてくれよ、って人は、ゲーム開始直後にコンソールを開いて
+撤去計画で木材だけ選ぶの面倒だよ、最初から撤去計画持たせてくれよ、って人は、ゲーム開始直後にコンソールを開いて以下を打ち込むべし。
+
     /c game.local_player.get_inventory(1).insert{name = "deconstruction-planner", count = 1}
-と打ち込むべし。
 
 # おまけ
 data\base\graphics\icons\alien-artifact.png 差し替え画像。  
