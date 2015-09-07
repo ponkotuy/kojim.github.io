@@ -78,6 +78,13 @@ var Product = React.createClass({
     var url = 'http://kojim.github.io/FactorioCalculator.html?product=' + encodeURI(this.state.product.name) +
               '&cps=' + this.state.cps +
               '&imports=' + encodeURI(this.state.imports.join('_'));
+    var parentonly = (
+      <p>
+        現在の設定のURL:  <input type='text' value={url}/> <br/>
+        <a href='http://kojim.github.io/Factorio%E8%87%AA%E5%88%86%E7%94%A8%E3%83%A1%E3%83%A2/'>戻る</a><br/>
+        <a href='http://kojim.github.io/FactorioCalculator_help.html'>ヘルプ</a>
+      </p>
+    );
     return (
       <div>
         <h2>生産物</h2>
@@ -102,14 +109,7 @@ var Product = React.createClass({
             { this.renderIngredients() }
           </tbody>
         </table>
-        <p className='parentonly'>
-        現在の設定のURL: 
-        <input type='text' value={url}/>
-        </p>
-        <p className='parentonly'>
-          <a href='http://kojim.github.io/Factorio%E8%87%AA%E5%88%86%E7%94%A8%E3%83%A1%E3%83%A2/'>戻る</a><br/>
-          <a href='http://kojim.github.io/FactorioCalculator_help.html'>ヘルプ</a>
-        </p>
+        {window == window.parent? parentonly : ''}
       </div>
     );
   }
@@ -158,6 +158,3 @@ React.render(
   <Product product={params['product']} cps={params['cps']} imports={params['imports']} ></Product>,
   document.getElementById('app-container')
 );
-if (window !== window.parent) {
-  $('#parentonly').css('display', 'none');
-}
