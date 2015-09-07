@@ -197,7 +197,7 @@ title: Factorio自分用プレイメモ
     * [ロケット制御ユニット1000個](http://kojim.github.io/FactorioCalculator.html?product=%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88%E5%88%B6%E5%BE%A1%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88&cps=0.28&imports=%E9%89%84%E6%9D%BF_%E9%89%84%E9%89%B1%E7%9F%B3_%E9%8A%85%E9%89%B1%E7%9F%B3_%E9%8A%85%E6%9D%BF_%E3%83%97%E3%83%A9%E3%82%B9%E3%83%81%E3%83%83%E3%82%AF%E6%A3%92_%E7%9F%B3%E7%82%AD_%E5%88%B6%E5%BE%A1%E5%9F%BA%E7%9B%A4_%E7%A1%AB%E9%85%B8_%E7%A1%AB%E9%BB%84_%E3%83%97%E3%83%AD%E3%83%91%E3%83%B3%E3%82%AC%E3%82%B9_%E5%8E%9F%E6%B2%B9)
     * その他ロケットサイロ&衛星素材
         * [鋼材1000個](http://kojim.github.io/FactorioCalculator.html?product=%E9%8B%BC%E6%9D%90&cps=0.28&imports=%E9%89%84%E9%89%B1%E7%9F%B3_%E9%89%84%E6%9D%BF)
-        * [コンクリート1000個]()
+        * [コンクリート1000個](http://kojim.github.io/FactorioCalculator.html?product=%E3%82%B3%E3%83%B3%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%88&cps=0.28&imports=)
         * [制御基盤300個](http://kojim.github.io/FactorioCalculator.html?product=%E5%88%B6%E5%BE%A1%E5%9F%BA%E7%9B%A4&cps=0.083&imports=%E9%89%84%E9%89%B1%E7%9F%B3_%E9%89%84%E6%9D%BF_%E9%8A%85%E9%89%B1%E7%9F%B3_%E9%8A%85%E6%9D%BF_%E7%99%BA%E5%B1%95%E5%9B%9E%E8%B7%AF_%E3%83%97%E3%83%A9%E3%82%B9%E3%83%81%E3%83%83%E3%82%AF%E6%A3%92_%E7%A1%AB%E9%85%B8_%E7%A1%AB%E9%BB%84_%E5%8E%9F%E6%B2%B9_%E7%9F%B3%E7%82%AD)
         * [電気エンジンユニット200個](http://kojim.github.io/FactorioCalculator.html?product=%E9%9B%BB%E6%B0%97%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88&cps=0.056&imports=%E9%8A%85%E6%9D%BF_%E9%8A%85%E9%89%B1%E7%9F%B3_%E9%89%84%E6%9D%BF_%E9%89%84%E9%89%B1%E7%9F%B3)
 
