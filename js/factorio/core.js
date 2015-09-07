@@ -157,6 +157,9 @@ var stone_brick = new MetalPlate(
 var steel_plate = new MetalPlate(
   "鋼材", 17.5, 1, [[iron_plate, 5]]
 );
+var concrete = new AssemblyProduct(
+  "コンクリート", 10, 10, [[stone_brick, 5], [iron_ore, 1]]
+);
 
 // -----------------
 // 原油系
@@ -316,9 +319,24 @@ var rocket = new AssemblyProduct(
 var power_armor_mk2 = new AssemblyProduct(
   "パワーアーマーMK2", 25, 1, [[effectivity_module3, 5], [speed_module3, 5], [processing_unit, 200], [steel_plate, 50]]
 );
+// -----------------
+// ロケット関係
+// -----------------
+var solid_fuel = new ChemicalProduct(
+  "固形燃料", 3, 1, [[light_oil, 1]]
+);
+var rocket_fuel = new AssemblyProduct(
+  "ロケット燃料", 30, 1, [[solid_fuel, 10]]
+);
+var rocket_control_unit = new AssemblyProduct(
+  "ロケット制御ユニット", 30, 1, [[processing_unit, 1], [speed_module1, 1]]
+);
+var low_density_structure = new AssemblyProduct(
+  "断熱材", 30, 1, [[steel_plate, 10], [copper_plate, 5], [plastic_bar, 5]]
+);
 
 var products = [
-	iron_ore, copper_ore, coal, stone, iron_plate, copper_plate, stone_brick, steel_plate,
+	iron_ore, copper_ore, coal, stone, iron_plate, copper_plate, stone_brick, steel_plate, concrete,
 	crude_oil, petroleum_gas, light_oil, heavy_oil, lubricant,
 	iron_gear_wheel, copper_cable, pipe, electronic_circuit, advanced_circuit, processing_unit,
 	basic_transport_belt, basic_inserter, fast_inserter, smart_inserter,
@@ -329,7 +347,8 @@ var products = [
 	speed_module1, speed_module2, speed_module3,
 	productivity_module1, productivity_module2, productivity_module3,
 	effectivity_module1, effectivity_module2, effectivity_module3,
-	stone_wall, laser_turret, rocket, power_armor_mk2
+	stone_wall, laser_turret, rocket, power_armor_mk2,
+	solid_fuel, rocket_fuel, rocket_control_unit, low_density_structure
 ];
 
 function getProductByName(name) {
