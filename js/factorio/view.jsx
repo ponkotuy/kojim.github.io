@@ -1,10 +1,26 @@
 var counter = 0;
 var Product = React.createClass({
   getInitialState: function() {
+    var product, cps, imports;
+    if (this.props.product === undefined) {
+      product = science_pack_1;
+    } else {
+      product = getProductByName(decodeURI(this.props.product));
+    }
+    if (this.props.cps === undefined) {
+      cps = 0.5;
+    } else {
+      cps = Number(this.props.cps);
+    }
+    if (this.props.imports === undefined) {
+      imports = []
+    } else {
+      imports = decodeURI(this.props.imports).split(',');
+    }
     return {
-      product: science_pack_1,
-      cps    : 0.5,
-      imports: []
+      product: product,
+      cps    : cps,
+      imports: imports
     };
   },
   renderProductOptions: function() {
@@ -24,7 +40,8 @@ var Product = React.createClass({
                     product={getProductByName(name)} cps={icps}
                     addImport={thiz.addImport}
                     removeImport={thiz.removeImport}
-                    cannotImport={thiz.state.product.name == name}/>
+                    cannotImport={thiz.state.product.name == name}
+                    isImport={$.inArray(name, thiz.state.imports) !== -1} />
       );
     });
     return result;
@@ -89,7 +106,7 @@ var Product = React.createClass({
 var Ingredient = React.createClass({
   getInitialState: function() {
     return {
-      isImport: false,
+      isImport: this.props.isImport,
       cannotImport: false
     };
   },
@@ -121,7 +138,12 @@ var Ingredient = React.createClass({
   }
 });
 
+var params = {}
+$.each(window.location.search.substring(1).split('&'), function(i, kv) {
+	kv_array = kv.split('=');
+	params[kv_array[0]] = kv_array[1];
+});
 React.render(
-  <Product></Product>,
+  <Product product={params['product']} cps={params['cps']} imports={params['imports']} ></Product>,
   document.getElementById('app-container')
 );
