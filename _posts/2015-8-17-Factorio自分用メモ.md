@@ -187,7 +187,6 @@ title: Factorio自分用プレイメモ
 # 各種試算
 60分で全素材を集める場合に必要な施設数。簡単に用意できる素材については割愛。
 
-## ソーラーパネル&蓄電池&レーザータレット
 * [ソーラーパネル1000個](http://kojim.github.io/FactorioCalculator.html?product=%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC%E3%83%91%E3%83%8D%E3%83%AB&cps=0.28&imports=%E9%89%84%E6%9D%BF_%E9%89%84%E9%89%B1%E7%9F%B3_%E9%8A%85%E9%89%B1%E7%9F%B3_%E9%8A%85%E6%9D%BF)
 * [蓄電池1000個](http://kojim.github.io/FactorioCalculator.html?product=%E8%93%84%E9%9B%BB%E6%B1%A0&cps=0.28&imports=%E9%89%84%E6%9D%BF_%E9%89%84%E9%89%B1%E7%9F%B3_%E9%8A%85%E9%89%B1%E7%9F%B3_%E9%8A%85%E6%9D%BF_%E9%9B%BB%E6%B1%A0_%E7%A1%AB%E9%85%B8_%E7%A1%AB%E9%BB%84_%E3%83%97%E3%83%AD%E3%83%91%E3%83%B3%E3%82%AC%E3%82%B9_%E5%8E%9F%E6%B2%B9)
 * [レーザータレット500個](http://kojim.github.io/FactorioCalculator.html?product=%E3%83%AC%E3%83%BC%E3%82%B6%E3%83%BC%E3%82%BF%E3%83%AC%E3%83%83%E3%83%88&cps=0.14&imports=%E9%9B%BB%E6%B1%A0_%E7%A1%AB%E9%85%B8_%E7%A1%AB%E9%BB%84_%E3%83%97%E3%83%AD%E3%83%91%E3%83%B3%E3%82%AC%E3%82%B9_%E5%8E%9F%E6%B2%B9_%E9%89%84%E6%9D%BF_%E9%89%84%E9%89%B1%E7%9F%B3_%E9%8A%85%E9%89%B1%E7%9F%B3_%E9%8A%85%E6%9D%BF)
