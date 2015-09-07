@@ -87,14 +87,14 @@ var Product = React.createClass({
     );
     return (
       <div>
-        <h2>生産物</h2>
+        <h3>生産物</h3>
         <p>
         <select onChange={this.handleProductChanged} defaultValue={this.state.product.name}>
           {this.renderProductOptions()}
         </select>
         <input type='text' onChange={this.handleCpsChanged} defaultValue={this.state.cps}></input>/s
         </p>
-        <h2>必要素材</h2>
+        <h3>必要素材</h3>
         <table style={{textAlign: 'center'}}>
           <thead>
             <tr>
