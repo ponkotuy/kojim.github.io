@@ -158,7 +158,7 @@ var Ingredient = React.createClass({
                               disabled={this.props.cannotImport}>搬入</input>
         </td>
         <td>{req_builder.toFixed(1)}</td>
-        <td>{this.state.isImport? 0 :(req_builder*this.props.product.energy_usage).toFixed(0)}W</td>
+        <td>{this.state.isImport? 0 :(req_builder*this.props.product.energy_usage).toFixed(0)}kW</td>
         <td>{this.props.cps.toFixed(3)}/s</td>
       </tr>
     );
