@@ -75,6 +75,7 @@ var Product = React.createClass({
     this.setState({imports: imports});
   },
   render: function() {
+    document.title = this.state.product.name;
     var url = 'http://kojim.github.io/FactorioCalculator.html?product=' + encodeURI(this.state.product.name) +
               '&cps=' + this.state.cps +
               '&imports=' + encodeURI(this.state.imports.join('_'));
