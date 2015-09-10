@@ -310,6 +310,9 @@ var effectivity_module3 = new AssemblyProduct(
 var stone_wall = new AssemblyProduct(
   "石壁", 0.5, 1, [[stone_brick, 5]]
 );
+var basic_bullet_magazine = new AssemblyProduct(
+  "通常弾薬", 2, 1, [[iron_plate, 2]]
+);
 var laser_turret = new AssemblyProduct(
   "レーザータレット", 20, 1, [[steel_plate, 20], [electronic_circuit, 20], [battery, 12]]
 );
@@ -347,7 +350,7 @@ var products = [
 	speed_module1, speed_module2, speed_module3,
 	productivity_module1, productivity_module2, productivity_module3,
 	effectivity_module1, effectivity_module2, effectivity_module3,
-	stone_wall, laser_turret, rocket, power_armor_mk2,
+	stone_wall, basic_bullet_magazine, laser_turret, rocket, power_armor_mk2,
 	solid_fuel, rocket_fuel, rocket_control_unit, low_density_structure
 ];
 
