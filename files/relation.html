@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <h2>
+      Leader Relations
+    </h2>
+    <div id='graph'></div>
+    <script type="text/javascript" src="d3.js"></script>
+    <script type="text/javascript">
+			//Width and height
+			var w = 500;
+			var h = 500;
+			
+			//Data
+			var dataset = [ 'Montezma', 'Montezma', 'Montezma', 'Montezma', 'Montezma', 'Montezma', 'Montezma'];
+			
+			//Create SVG element
+			var svg = d3.select("body")
+						.append("svg")
+						.attr("width",  w)
+						.attr("height", h);
+
+			var circles = svg.selectAll("circle.leader")
+			    .data(dataset)
+			    .enter()
+			    .append("circle");
+			circles.attr("cx", function(d, i) {
+						return 250 + (100 * Math.sin(((i * 2 / dataset.length)+1) * Math.PI));
+					})
+				   .attr("cy", function(d, i) {
+						return 250 + (100 * Math.cos(((i * 2 / dataset.length)+1) * Math.PI));
+					})
+				   .attr("r", 5)
+				   .attr("classe", "leader");
+
+			var circles2 = svg.selectAll("circle.rel_from")
+			    .data(dataset)
+			    .enter()
+			    .append("circle");
+			circles2.attr("cx", function(d, i) {
+						return 250 + (85 * Math.sin(((i * 2 / dataset.length)+1.05) * Math.PI));
+					})
+				   .attr("cy", function(d, i) {
+						return 250 + (85 * Math.cos(((i * 2 / dataset.length)+1.05) * Math.PI));
+					})
+				   .attr("r", 2)
+				   .attr("classe", "rel_from");
+
+			var circles3 = svg.selectAll("circle.rel_to")
+			    .data(dataset)
+			    .enter()
+			    .append("circle");
+			circles3.attr("cx", function(d, i) {
+						return 250 + (85 * Math.sin(((i * 2 / dataset.length)+0.95) * Math.PI));
+					})
+				   .attr("cy", function(d, i) {
+						return 250 + (85 * Math.cos(((i * 2 / dataset.length)+0.95) * Math.PI));
+					})
+				   .attr("r", 2)
+				   .attr("classe", "rel_to");
+
+console.log('a');
+    </script>
+  </body>
+</html>
