@@ -224,6 +224,12 @@ var processing_unit = new AssemblyProduct(
 var basic_transport_belt = new AssemblyProduct(
   "ベルトコンベア", 0.5, 2, [[iron_plate, 1], [iron_gear_wheel, 1]]
 );
+var fast_transport_belt = new AssemblyProduct(
+  "高速ベルトコンベア", 0.5, 1, [[basic_transport_belt, 1], [iron_gear_wheel, 5]]
+);
+var express_transport_belt = new AssemblyProduct(
+  "超高速ベルトコンベア", 0.5, 1, [[fast_transport_belt, 1], [iron_gear_wheel, 5], [lubricant, 2]]
+);
 var basic_inserter = new AssemblyProduct(
   "インサーター", 0.5, 1, [[electronic_circuit, 1], [iron_gear_wheel, 1], [iron_plate, 1]]
 );
@@ -342,7 +348,8 @@ var products = [
 	iron_ore, copper_ore, coal, stone, iron_plate, copper_plate, stone_brick, steel_plate, concrete,
 	crude_oil, petroleum_gas, light_oil, heavy_oil, lubricant,
 	iron_gear_wheel, copper_cable, pipe, electronic_circuit, advanced_circuit, processing_unit,
-	basic_transport_belt, basic_inserter, fast_inserter, smart_inserter,
+	basic_transport_belt, fast_transport_belt, express_transport_belt,
+	basic_inserter, fast_inserter, smart_inserter,
 	plastic_bar, sulfur, sulfuric_acid, explosives,
 	battery, engine_unit, electric_engine_unit, flying_robot_frame,
 	solar_panel, basic_accumulator,
