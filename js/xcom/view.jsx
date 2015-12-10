@@ -117,6 +117,7 @@ var Product = React.createClass({
               <th></th>
               <th>生存</th>
               <th>死亡</th>
+              <th>合計</th>
             </tr>
           </thead>
           <tbody>
@@ -124,11 +125,18 @@ var Product = React.createClass({
               <th>失敗</th>
               <td>{result_table[0][0].toFixed(2)}%</td>
               <td>{result_table[1][0].toFixed(2)}%</td>
+              <td>{(result_table[0][0] + result_table[1][0]).toFixed(2)}%</td>
             </tr>
             <tr>
               <th>成功</th>
               <td>{result_table[0][1].toFixed(2)}%</td>
               <td>{result_table[1][1].toFixed(2)}%</td>
+              <td>{(result_table[0][1] + result_table[1][1]).toFixed(2)}%</td>
+            </tr>
+            <tr>
+              <th>合計</th>
+              <td>{(result_table[0][0] + result_table[0][1]).toFixed(2)}%</td>
+              <td>{(result_table[1][0] + result_table[1][1]).toFixed(2)}%</td>
             </tr>
           </tbody>
         </table>
