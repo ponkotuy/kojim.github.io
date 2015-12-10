@@ -57,7 +57,7 @@ function simulate(xcom_dices, initilal_threat, success_limit, threat_limit) {
 	}
 
 	// シミュレーションの試行回数
-	var simulate_count = 1000;
+	var simulate_count = 10000;
 
 	// 結果配列の初期化
 	// 
