@@ -4,7 +4,7 @@ var Product = React.createClass({
       xcom_dices     : 1,
       initilal_threat: 1,
       success_limit  : 1,
-      threat_limit   : 3
+      threat_limit   : 2
     };
   },
   handleXcomDiceChanged: function(event) {
@@ -110,7 +110,7 @@ var Product = React.createClass({
           <li>死亡する</li>
         </ul>
         <h1>結果</h1>
-        <h2>結果概要</h2>
+        <h2>概要</h2>
         <table style={{textAlign: 'center'}}>
           <thead>
             <tr>
