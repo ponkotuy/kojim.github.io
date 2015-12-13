@@ -1,14 +1,34 @@
 var Product = React.createClass({
   getInitialState: function() {
     return {
+      employees      : 1,
       xcom_dices     : 1,
+      xcom_dice_eq   : true,
       initilal_threat: 1,
       success_limit  : 1,
-      threat_limit   : 2
+      threat_limit   : 2,
+      shortage_cost  : false,
+      unit_lost_cost : false,
     };
+  },
+  handleEmployeeChanged: function(event) {
+    var newState = {}
+    newState['employees'] = event.target.value;
+    if (this.state.xcom_dice_eq) {
+      newState['xcom_dices'] = event.target.value;
+    }
+    this.setState(newState);
   },
   handleXcomDiceChanged: function(event) {
     this.setState({xcom_dices: event.target.value});
+  },
+  handleXcomDiceEqChanged: function(event) {
+    var newState = {}
+    newState['xcom_dice_eq'] = event.target.checked;
+    if (event.target.checked) {
+      newState['xcom_dices'] = this.state.employees;
+    }
+    this.setState(newState);
   },
   handleInitialThreatChanged: function(event) {
     this.setState({initilal_threat: event.target.value});
@@ -18,6 +38,12 @@ var Product = React.createClass({
   },
   handleThreatLimitChanged: function(event) {
     this.setState({threat_limit: event.target.value});
+  },
+  handleShortageCostChange: function(event) {
+    this.setState({shortage_cost: event.target.checked});
+  },
+  handleUnitLostCostChange: function(event) {
+    this.setState({unit_lost_cost: event.target.checked});
   },
   renderTbody: function(simulate_result) {
     var result = []
@@ -54,14 +80,41 @@ var Product = React.createClass({
         result_table[1][1] += simulate_result[1][i];
       }
     }
+
+    // コスト期待値計算
+    var total_cost = [];
+    // 雇用コスト
+    total_cost[0] = Number(this.state.employees);
+
+    // 撃ち漏らし損害
+    total_cost[1] = 0;
+    if (this.state.shortage_cost) {
+      // 成功マーカー不足数 * 確率 の総和
+      for(var i=0; i<simulate_result[0].length; i++) {
+        if (i < this.state.success_limit) {
+          total_cost[1] += (this.state.success_limit - i) * (simulate_result[0][i] + simulate_result[1][i]) / 100 * 3;
+        }
+      }
+    }
+
+    // 死亡損害
+    total_cost[2] = 0;
+    if (this.state.unit_lost_cost) {
+      // 雇用数 * 死亡率
+      total_cost[2] = this.state.employees * (result_table[1][0] + result_table[1][1]) / 100;
+    }
+
+    // 合計
+    total_cost[3] = total_cost[0] + total_cost[1] + total_cost[2];
+
     return (
       <div>
         <h1>条件設定</h1>
         <h2>初期値</h2>
         <ul>
           <li>
-            XCOMダイス数
-            <select onChange={this.handleXcomDiceChanged}>
+            雇用人数/機数
+            <select onChange={this.handleEmployeeChanged}>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -71,6 +124,26 @@ var Product = React.createClass({
               <option>7</option>
               <option>8</option>
             </select>
+          </li>
+          <li>
+            XCOMダイス数
+            <select onChange={this.handleXcomDiceChanged}
+                    disabled={this.state.xcom_dice_eq}
+                    value={this.state.xcom_dices}>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+            </select>
+            &nbsp; &nbsp; (<input type='checkbox'
+                                  defaultChecked={this.state.xcom_dice_eq}
+                                  onChange={this.handleXcomDiceEqChanged}>
+                             雇用人数/機数と同じ
+                           </input>)
           </li>
           <li>
             初期脅威度
@@ -109,6 +182,12 @@ var Product = React.createClass({
           </li>
           <li>死亡する</li>
         </ul>
+        <h2>コスト条件</h2>
+        <ul>
+          <li>雇用コスト</li>
+          <li><input type='checkbox' onChange={this.handleShortageCostChange}>撃ち漏らし損害(成功マーカーの不足=3$で計算)</input></li>
+          <li><input type='checkbox' onChange={this.handleUnitLostCostChange}>死亡時損害</input></li>
+        </ul>
         <h1>結果</h1>
         <h2>概要</h2>
         <table style={{textAlign: 'center'}}>
@@ -140,6 +219,29 @@ var Product = React.createClass({
             </tr>
           </tbody>
         </table>
+
+        <h2>総コスト期待値</h2>
+        <table style={{textAlign: 'center'}}>
+          <tbody>
+            <tr>
+              <th>雇用コスト</th>
+              <td>{total_cost[0]}</td>
+            </tr>
+            <tr>
+              <th>撃ち漏らし損害</th>
+              <td>{total_cost[1].toFixed(2)}</td>
+            </tr>
+            <tr>
+              <th>死亡損害</th>
+              <td>{total_cost[2].toFixed(2)}</td>
+            </tr>
+            <tr>
+              <th>合計</th>
+              <td>{total_cost[3].toFixed(2)}</td>
+            </tr>
+          </tbody>
+        </table>
+
         <h2>確率分布詳細</h2>
         <table style={{textAlign: 'center'}}>
           <thead>
