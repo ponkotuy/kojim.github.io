@@ -9,6 +9,7 @@ var Product = React.createClass({
       threat_limit   : 2,
       shortage_cost  : false,
       unit_lost_cost : false,
+      benefit        : 0
     };
   },
   handleEmployeeChanged: function(event) {
@@ -44,6 +45,9 @@ var Product = React.createClass({
   },
   handleUnitLostCostChange: function(event) {
     this.setState({unit_lost_cost: event.target.checked});
+  },
+  handleBenefitChange: function(event) {
+    this.setState({benefit: event.target.value});
   },
   renderTbody: function(simulate_result) {
     var result = []
@@ -104,8 +108,11 @@ var Product = React.createClass({
       total_cost[2] = this.state.employees * (result_table[1][0] + result_table[1][1]) / 100;
     }
 
+    // 成功時利益
+    total_cost[3] = this.state.benefit * (result_table[0][0] + result_table[0][1]) / 100 * (-1);
+
     // 合計
-    total_cost[3] = total_cost[0] + total_cost[1] + total_cost[2];
+    total_cost[4] = total_cost[0] + total_cost[1] + total_cost[2] + total_cost[3];
 
     return (
       <div>
@@ -187,6 +194,17 @@ var Product = React.createClass({
           <li>雇用コスト</li>
           <li><input type='checkbox' onChange={this.handleShortageCostChange}>撃ち漏らし損害(成功マーカーの不足=3$で計算)</input></li>
           <li><input type='checkbox' onChange={this.handleUnitLostCostChange}>死亡時損害</input></li>
+          <li>
+            成功時利益
+            <select onChange={this.handleBenefitChange}>
+              <option>0</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </li>
         </ul>
         <h1>結果</h1>
         <h2>概要</h2>
@@ -236,8 +254,12 @@ var Product = React.createClass({
               <td>{total_cost[2].toFixed(2)}</td>
             </tr>
             <tr>
-              <th>合計</th>
+              <th>成功時利益</th>
               <td>{total_cost[3].toFixed(2)}</td>
+            </tr>
+            <tr>
+              <th>合計</th>
+              <td>{total_cost[4].toFixed(2)}</td>
             </tr>
           </tbody>
         </table>
