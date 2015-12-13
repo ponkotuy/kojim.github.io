@@ -109,7 +109,7 @@ var Product = React.createClass({
     }
 
     // 成功時利益
-    total_cost[3] = this.state.benefit * (result_table[0][0] + result_table[0][1]) / 100 * (-1);
+    total_cost[3] = this.state.benefit * (result_table[0][1] + result_table[1][1]) / 100 * (-1);
 
     // 合計
     total_cost[4] = total_cost[0] + total_cost[1] + total_cost[2] + total_cost[3];
