@@ -215,7 +215,7 @@ var advanced_circuit = new AssemblyProduct(
   "発展回路", 8, 1, [[electronic_circuit, 2], [plastic_bar, 2], [copper_cable, 4]]
 );
 var processing_unit = new AssemblyProduct(
-  "制御基盤", 8, 1, [[electronic_circuit, 20], [advanced_circuit, 2], [sulfuric_acid, 0.5]]
+  "制御基盤", 15, 1, [[electronic_circuit, 20], [advanced_circuit, 2], [sulfuric_acid, 0.5]]
 );
 
 // -----------------
