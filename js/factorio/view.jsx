@@ -1,7 +1,7 @@
 var counter = 0;
 var Product = React.createClass({
   getInitialState: function() {
-    var product, cps, imports;
+    var product, cps, imports, language;
     if (this.props.product === undefined) {
       product = science_pack_1;
     } else {
@@ -17,10 +17,14 @@ var Product = React.createClass({
     } else {
       imports = decodeURI(this.props.imports).split('_');
     }
+    if (this.props.language === undefined) {
+      language = 'Japanese'
+    }
     return {
-      product: product,
-      cps    : cps,
-      imports: imports
+      product : product,
+      cps     : cps,
+      imports : imports,
+      language: language
     };
   },
   renderProductOptions: function() {
@@ -41,10 +45,14 @@ var Product = React.createClass({
                     addImport={thiz.addImport}
                     removeImport={thiz.removeImport}
                     cannotImport={thiz.state.product.name == name}
+                    language={thiz.state.language}
                     isImport={$.inArray(name, thiz.state.imports) !== -1} />
       );
     });
     return result;
+  },
+  handleLanguageChanged: function(event) {
+    this.setState({language: event.target.value});
   },
   handleProductChanged: function(event) {
     var name = event.target.value;
@@ -74,11 +82,15 @@ var Product = React.createClass({
     });
     this.setState({imports: imports});
   },
+  text: function(e,j) {
+    return this.state.language == 'Japanese' ? j:e;
+  },
   render: function() {
     document.title = this.state.product.name;
     document.location.hash = '#product=' + encodeURI(this.state.product.name) +
                              '&cps=' + this.state.cps +
-                             '&imports=' + encodeURI(this.state.imports.join('_'));
+                             '&imports=' + encodeURI(this.state.imports.join('_')) +
+                             '&language=' + this.state.language;
     var parentonly = (
       <div>
         <h3>その他</h3>
@@ -101,23 +113,27 @@ var Product = React.createClass({
       </div>
     );
     return (
-      <div>
-        <h3>生産物</h3>
+      <div className='container'>
+        <select onChange={this.handleLanguageChanged} defaultValue={this.state.language}>
+          <option>Japanese</option>
+          <option>English</option>
+        </select>
+        <h3> {this.text('Product', '生産物')}</h3>
         <p>
         <select onChange={this.handleProductChanged} defaultValue={this.state.product.name}>
           {this.renderProductOptions()}
         </select>
         <input type='text' onChange={this.handleCpsChanged} defaultValue={this.state.cps}></input>/s
         </p>
-        <h3>必要素材</h3>
-        <table style={{textAlign: 'center'}}>
+        <h3> {this.text('Ingredient', '必要素材')}</h3>
+        <table className='table table-bordered table-striped'>
           <thead>
             <tr>
-              <th>名前</th>
-              <th>生産方法</th>
-              <th>必要設備数</th>
-              <th>消費電力</th>
-              <th>生産数/搬入数</th>
+              <th> {this.text('name', '名前')}</th>
+              <th> {this.text('producing area', '生産方法')}</th>
+              <th> {this.text('builder count', '必要設備数')}</th>
+              <th> {this.text('electricity consumption', '消費電力')}</th>
+              <th> {this.text('product count/import count', '生産数/搬入数')}</th>
             </tr>
           </thead>
           <tbody>
@@ -144,17 +160,20 @@ var Ingredient = React.createClass({
     this.setState({isImport: true});
     this.props.addImport(this.props.product.name);
   },
+  text: function(e,j) {
+    return this.props.language == 'Japanese' ? j:e;
+  },
   render: function() {
     var req_builder = this.props.product.require_builder_count(this.props.cps);
     return (
       <tr>
-        <td>{this.props.product.name}</td>
+        <td>{this.text(this.props.product.name, this.props.product.name_jp)}</td>
         <td>
           <input type='radio' name={this.props.product.name} onChange={this.handleNotImport}
-                              defaultChecked={!this.state.isImport} >現地</input>
+                              defaultChecked={!this.state.isImport} > {this.text('local', '現地')}</input>
           <input type='radio' name={this.props.product.name} onChange={this.handleImport}
                               defaultChecked={this.state.isImport}
-                              disabled={this.props.cannotImport}>搬入</input>
+                              disabled={this.props.cannotImport}> {this.text('import', '搬入')}</input>
         </td>
         <td>{req_builder.toFixed(1)}</td>
         <td>{this.state.isImport? 0 :(req_builder*this.props.product.energy_usage).toFixed(0)}kW</td>
@@ -170,6 +189,6 @@ $.each(window.location.hash.substring(1).split('&'), function(i, kv) {
 	params[kv_array[0]] = kv_array[1];
 });
 React.render(
-  <Product product={params['product']} cps={params['cps']} imports={params['imports']} ></Product>,
+  <Product product={params['product']} cps={params['cps']} imports={params['imports']} language={params['language']}></Product>,
   document.getElementById('app-container')
 );
