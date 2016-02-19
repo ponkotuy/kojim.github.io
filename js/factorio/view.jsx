@@ -76,9 +76,9 @@ var Product = React.createClass({
   },
   render: function() {
     document.title = this.state.product.name;
-    var url = 'http://kojim.github.io/FactorioCalculator.html?product=' + encodeURI(this.state.product.name) +
-              '&cps=' + this.state.cps +
-              '&imports=' + encodeURI(this.state.imports.join('_'));
+    document.location.hash = '#product=' + encodeURI(this.state.product.name) +
+                             '&cps=' + this.state.cps +
+                             '&imports=' + encodeURI(this.state.imports.join('_'));
     var parentonly = (
       <div>
         <h3>その他</h3>
@@ -96,7 +96,6 @@ var Product = React.createClass({
           </li>
         </ul>
         <p>
-          現在の設定へのリンクURL:  <input type='text' value={url}/> <br/>
           <a href='http://kojim.github.io/Factorio%E8%87%AA%E5%88%86%E7%94%A8%E3%83%A1%E3%83%A2/'>戻る</a><br/>
         </p>
       </div>
@@ -166,7 +165,7 @@ var Ingredient = React.createClass({
 });
 
 var params = {}
-$.each(window.location.search.substring(1).split('&'), function(i, kv) {
+$.each(window.location.hash.substring(1).split('&'), function(i, kv) {
 	kv_array = kv.split('=');
 	params[kv_array[0]] = kv_array[1];
 });
