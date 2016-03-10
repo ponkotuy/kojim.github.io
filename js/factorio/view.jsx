@@ -19,6 +19,8 @@ var Product = React.createClass({
     }
     if (this.props.language === undefined) {
       language = 'Japanese'
+    } else {
+      language = this.props.language;
     }
     return {
       product : product,
@@ -31,7 +33,7 @@ var Product = React.createClass({
     var thiz = this;
     return products.map(function(p) {
       return(
-        <option value={p.name}>{p.name_jp}</option>
+        <option value={p.name}>{thiz.state.language=='Japanese' ? p.name_jp : p.name}</option>
       );
     });
   },
@@ -103,7 +105,7 @@ var Product = React.createClass({
           <li>データ古いよとか計算間違ってるよとかの指摘も歓迎</li>
           <li>iframeタグを使うとこのページを自身のブログ内等に埋め込めます。その際は「その他」以降の情報は表示されなくなるので安心。
             <pre>
-              例: &lt;iframe width="600" src="http://kojim.github.io/FactorioCalculator.html?product=%E9%8A%85%E7%B7%9A&cps=3.3&imports=%E9%8A%85%E9%89%B1%E7%9F%B3_%E9%8A%85%E6%9D%BF" frameborder="1"&gt;&lt;/iframe&gt;
+              例: &lt;iframe width="600" src="http://kojim.github.io/FactorioCalculator.html" frameborder="1"&gt;&lt;/iframe&gt;
             </pre>
           </li>
         </ul>
@@ -120,7 +122,7 @@ var Product = React.createClass({
         </select>
         <h3> {this.text('Product', '生産物')}</h3>
         <p>
-        <select onChange={this.handleProductChanged} defaultValue={this.state.product.name_jp}>
+        <select onChange={this.handleProductChanged} defaultValue={this.state.product.name}>
           {this.renderProductOptions()}
         </select>
         <input type='text' onChange={this.handleCpsChanged} defaultValue={this.state.cps}></input>/s
@@ -133,7 +135,7 @@ var Product = React.createClass({
               <th> {this.text('producing area', '生産方法')}</th>
               <th> {this.text('builder count', '必要設備数')}</th>
               <th> {this.text('electricity consumption', '消費電力')}</th>
-              <th> {this.text('product count/import count', '生産数/搬入数')}</th>
+              <th> {this.text('product/import speed', '生産/搬入速度')}</th>
             </tr>
           </thead>
           <tbody>
