@@ -31,7 +31,7 @@ var Product = React.createClass({
     var thiz = this;
     return products.map(function(p) {
       return(
-        <option>{p.name}</option>
+        <option value={p.name}>{p.name_jp}</option>
       );
     });
   },
@@ -120,7 +120,7 @@ var Product = React.createClass({
         </select>
         <h3> {this.text('Product', '生産物')}</h3>
         <p>
-        <select onChange={this.handleProductChanged} defaultValue={this.state.product.name}>
+        <select onChange={this.handleProductChanged} defaultValue={this.state.product.name_jp}>
           {this.renderProductOptions()}
         </select>
         <input type='text' onChange={this.handleCpsChanged} defaultValue={this.state.cps}></input>/s
