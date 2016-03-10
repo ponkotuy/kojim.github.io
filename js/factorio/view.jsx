@@ -88,7 +88,7 @@ var Product = React.createClass({
     return this.state.language == 'Japanese' ? j:e;
   },
   render: function() {
-    document.title = this.state.product.name;
+    document.title = this.state.language == 'Japanese' ? this.state.product.name_jp : this.state.product.name;
     document.location.hash = '#product=' + encodeURI(this.state.product.name) +
                              '&cps=' + this.state.cps +
                              '&imports=' + encodeURI(this.state.imports.join('_')) +
