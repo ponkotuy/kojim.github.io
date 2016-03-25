@@ -132,10 +132,10 @@ var Product = React.createClass({
           <thead>
             <tr>
               <th> {this.text('name', '名前')}</th>
-              <th> {this.text('producing area', '生産方法')}</th>
-              <th> {this.text('builder count', '必要設備数')}</th>
-              <th> {this.text('electricity consumption', '消費電力')}</th>
-              <th> {this.text('product/import speed', '生産/搬入速度')}</th>
+              <th> <i className="fa fa-arrow-down"></i>/<i className="fa fa-truck"></i> {this.text('producing area', '生産方法')}</th>
+              <th> <i className="fa fa-industry"></i> {this.text('require builders', '必要設備数')}</th>
+              <th> <i className="fa fa-bolt"></i> {this.text('power', '消費電力')}</th>
+              <th> <i className="fa fa-exchange"></i> {this.text('producing/import speed', '生産/搬入速度')}</th>
             </tr>
           </thead>
           <tbody>
