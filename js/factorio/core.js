@@ -307,22 +307,22 @@ var speed_module3 = new AssemblyProduct(
   "SpeedModule3", "生産速度モジュール3", 60, 1, [[speed_module2, 4], [advanced_circuit, 5], [processing_unit, 5]]
 );
 var productivity_module1 = new AssemblyProduct(
-  "ProductivityModule1", "エネルギー効率モジュール1", 15, 1, [[electronic_circuit, 5], [advanced_circuit, 5]]
+  "ProductivityModule1", "生産力モジュール1", 15, 1, [[electronic_circuit, 5], [advanced_circuit, 5]]
 );
 var productivity_module2 = new AssemblyProduct(
-  "ProductivityModule2", "エネルギー効率モジュール2", 30, 1, [[productivity_module1, 4], [advanced_circuit, 5], [processing_unit, 5]]
+  "ProductivityModule2", "生産力モジュール2", 30, 1, [[productivity_module1, 4], [advanced_circuit, 5], [processing_unit, 5]]
 );
 var productivity_module3 = new AssemblyProduct(
-  "ProductivityModule3", "エネルギー効率モジュール3", 60, 1, [[productivity_module2, 4], [advanced_circuit, 5], [processing_unit, 5]]
+  "ProductivityModule3", "生産力モジュール3", 60, 1, [[productivity_module2, 5], [advanced_circuit, 5], [processing_unit, 5]]
 );
 var effectivity_module1 = new AssemblyProduct(
-  "EffectivityModule1", "効率化モジュール1", 15, 1, [[electronic_circuit, 5], [advanced_circuit, 5]]
+  "EffectivityModule1", "エネルギー効率モジュール1", 15, 1, [[electronic_circuit, 5], [advanced_circuit, 5]]
 );
 var effectivity_module2 = new AssemblyProduct(
-  "EffectivityModule2", "効率化モジュール2", 30, 1, [[effectivity_module1, 4], [advanced_circuit, 5], [processing_unit, 5]]
+  "EffectivityModule2", "エネルギー効率モジュール2", 30, 1, [[effectivity_module1, 4], [advanced_circuit, 5], [processing_unit, 5]]
 );
 var effectivity_module3 = new AssemblyProduct(
-  "EffectivityModule3", "効率化モジュール3", 60, 1, [[effectivity_module2, 4], [advanced_circuit, 5], [processing_unit, 5]]
+  "EffectivityModule3", "エネルギー効率モジュール3", 60, 1, [[effectivity_module2, 5], [advanced_circuit, 5], [processing_unit, 5]]
 );
 
 // -----------------
