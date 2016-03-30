@@ -92,13 +92,13 @@ title: Factorio自分用プレイメモ
         * 採掘機3:ボイラー8:発電機6を1セットで運用。
         * 電力が不足する前に6,12,24,48,96と倍々に増やしていく。48個では中盤やや辛い。
 * 1st line
-    * 役割: SP1と2の供給および日用品の生産
+    * 役割: SP1と2、および日用品の生産
     * 搬入資源
         * 鉄(ベルトコンベア1/秒間10個)
         * 銅(ベルトコンベア1/秒間10個)
     * 生産物
-        * [SP1(毎秒0.75個)](http://kojim.github.io/FactorioCalculator.html?product=%E3%82%B5%E3%82%A4%E3%82%A8%E3%83%B3%E3%82%B9%E3%83%91%E3%83%83%E3%82%AF1&cps=0.75&imports=%E9%8A%85%E6%9D%BF_%E9%89%84%E6%9D%BF)
-        * [SP2(毎秒0.75個)](http://kojim.github.io/FactorioCalculator.html?product=%E3%82%B5%E3%82%A4%E3%82%A8%E3%83%B3%E3%82%B9%E3%83%91%E3%83%83%E3%82%AF2&cps=0.75&imports=%E9%89%84%E6%9D%BF_%E9%8A%85%E6%9D%BF)
+        * [SP1(毎秒0.75個)]( http://kojim.github.io/FactorioCalculator.html#product=SciencePack1&cps=0.75&imports=&language=Japanese )
+        * [SP2(毎秒0.75個)]( http://kojim.github.io/FactorioCalculator.html#product=SciencePack2&cps=0.75&imports=&language=Japanese )
         * 日用品
             * 電柱
             * ベルトコンベア1
@@ -106,10 +106,28 @@ title: Factorio自分用プレイメモ
             * インサータ
             * リペアキット
             * 弾薬
+            * パイプ
     * 備考
         * 日用品を作るために広いスペースが必要。32マス程の幅があると理想。
         * ラインの末尾に銅鉄格納用チェストを配置しておくと便利。
 * 2nd line
+    * 役割: 電子回路と鋼材、ソーラーパネルの量産
+    * 搬入資源
+        * 鉄(ベルトコンベア1/秒間10個)
+        * 銅(ベルトコンベア1/秒間10個)
+    * 生産物
+        * 日用中間素材
+            * [電子回路(毎秒4個)]( http://kojim.github.io/FactorioCalculator.html#product=ElectronicCircuit&cps=4&imports=&language=Japanese )
+            * [鋼材(毎秒1個)]( http://kojim.github.io/FactorioCalculator.html#product=SteelPlate&cps=1&imports=&language=Japanese )
+        * 他
+            * [ソーラーパネル(毎秒0.225)]( http://kojim.github.io/FactorioCalculator.html#product=SolarPanel&cps=0.225&imports=&language=Japanese )
+    * 備考
+        * 本格的な鋼材生産は電気炉が揃ってからでよい。
+        * 早めに作成し電子回路を作りためておかないと、建造ロボの製造がいくら待っても終わらない。
+        * ソーラーパネルラインが稼動すると銅鉄を全消費するので注意。
+        * 後々ベルトコンベアを高速なものに置き換える前提でスペースに余裕を持たせておくと良いかも
+        * ソーラーパネルはここで作ると楽。中盤で1000個、クリア直前に2000個あれば十分だろう。
+* 3rd line
     * 役割: 原油系資源を使う物資の量産
     * 搬入資源
         * 鉄&銅(ベルトコンベア1/秒間10個)
@@ -117,30 +135,14 @@ title: Factorio自分用プレイメモ
         * プロパンガス
         * 潤滑油
     * 生産物
-        * [電池(毎秒2個)](http://kojim.github.io/FactorioCalculator.html?product=%E9%9B%BB%E6%B1%A0&cps=2&imports=%E9%89%84%E6%9D%BF_%E9%8A%85%E6%9D%BF)
-        * [プラスチック(毎秒8個)](http://kojim.github.io/FactorioCalculator.html?product=%E3%83%97%E3%83%A9%E3%82%B9%E3%83%81%E3%83%83%E3%82%AF%E6%A3%92&cps=8&imports=)
-        * [飛行ロボットフレーム(毎秒0.1個)](http://kojim.github.io/FactorioCalculator.html?product=%E9%A3%9B%E8%A1%8C%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0&cps=0.1&imports=%E9%89%84%E6%9D%BF_%E9%9B%BB%E6%B1%A0_%E7%A1%AB%E9%85%B8_%E7%A1%AB%E9%BB%84_%E3%83%97%E3%83%AD%E3%83%91%E3%83%B3%E3%82%AC%E3%82%B9_%E6%BD%A4%E6%BB%91%E6%B2%B9_%E9%87%8D%E6%B2%B9_%E5%8E%9F%E6%B2%B9_%E9%89%84%E9%89%B1%E7%9F%B3)
+        * [電池(毎秒2個)]( http://kojim.github.io/FactorioCalculator.html#product=Battery&cps=2&imports=&language=Japanese )
+        * [プラスチック(毎秒8個)]( http://kojim.github.io/FactorioCalculator.html#product=PlasticBar&cps=8&imports=&language=Japanese )
+        * [飛行ロボットフレーム(毎秒0.1個)]( http://kojim.github.io/FactorioCalculator.html#product=FlyingRobotFrame&cps=0.1&imports=&language=Japanese )
+        * [蓄電池(毎秒0.225個)]( http://kojim.github.io/FactorioCalculator.html#product=BasicAccumulator&cps=0.225&imports=&language=Japanese )
     * 備考
         * SP3製造ラインが電池を毎秒1消費するので、蓄電池やレーザータレットの生産に使えるのはその余り。
         * 飛行ロボットフレームは2ライン用意するとストレスが少ない。
         * 終盤必要になってくるので、電気エンジンユニットを1つ余分に作ってチェストに貯めておく。
-* 3rd line
-    * 役割: 電子回路と鋼材の量産
-    * 搬入資源
-        * 鉄(ベルトコンベア1/秒間10個)
-        * 銅(ベルトコンベア1/秒間10個)
-    * 生産物
-        * 電子回路
-            * 秒間生産: 4個(組立機数:2)
-            * 秒間消費: 鉄4, 銅6
-        * 鋼材
-            * 秒間生産: 1個(組立機数:9)
-            * 秒間消費: 鉄5
-    * 備考
-        * 本格的な鋼材生産は電気炉が揃ってからでよい。
-        * 早めに作成し電子回路を作りためておかないと、建造ロボの製造がいくら待っても終わらない。
-        * 後々ベルトコンベアを高速なものに置き換える前提でスペースに余裕を持たせておくと良いかも
-        * ソーラーパネルはここで作ると楽。中盤で1000個、クリア直前に2000個あれば十分だろう。
 * 4th line
     * 役割: 発展回路の量産
     * 搬入資源
@@ -178,7 +180,7 @@ title: Factorio自分用プレイメモ
         * 発展回路
         * 硫酸
     * 生産物
-        * [制御基盤](http://kojim.github.io/FactorioCalculator.html?product=%E5%88%B6%E5%BE%A1%E5%9F%BA%E7%9B%A4&cps=0.6&imports=%E7%99%BA%E5%B1%95%E5%9B%9E%E8%B7%AF_%E7%9F%B3%E7%82%AD_%E7%A1%AB%E9%85%B8_%E7%A1%AB%E9%BB%84_%E3%83%97%E3%83%A9%E3%82%B9%E3%83%81%E3%83%83%E3%82%AF%E6%A3%92_%E3%83%97%E3%83%AD%E3%83%91%E3%83%B3%E3%82%AC%E3%82%B9_%E5%8E%9F%E6%B2%B9_%E9%8A%85%E6%9D%BF_%E9%8A%85%E9%89%B1%E7%9F%B3_%E9%89%84%E6%9D%BF_%E9%89%84%E9%89%B1%E7%9F%B3)
+        * [制御基盤]()
     * 備考
         * 大量消費する電子回路を搬入してくるのは現実的でないのでここで銅鉄から生産しよう。
 * その他メモ
@@ -193,18 +195,18 @@ title: Factorio自分用プレイメモ
 # 各種試算
 60分で全素材を集める場合に必要な施設数。簡単に用意できる素材については割愛。
 
-* [ソーラーパネル1000個](http://kojim.github.io/FactorioCalculator.html?product=%E3%82%BD%E3%83%BC%E3%83%A9%E3%83%BC%E3%83%91%E3%83%8D%E3%83%AB&cps=0.28&imports=%E9%89%84%E6%9D%BF_%E9%89%84%E9%89%B1%E7%9F%B3_%E9%8A%85%E9%89%B1%E7%9F%B3_%E9%8A%85%E6%9D%BF)
-* [蓄電池1000個](http://kojim.github.io/FactorioCalculator.html?product=%E8%93%84%E9%9B%BB%E6%B1%A0&cps=0.28&imports=%E9%89%84%E6%9D%BF_%E9%89%84%E9%89%B1%E7%9F%B3_%E9%8A%85%E9%89%B1%E7%9F%B3_%E9%8A%85%E6%9D%BF_%E9%9B%BB%E6%B1%A0_%E7%A1%AB%E9%85%B8_%E7%A1%AB%E9%BB%84_%E3%83%97%E3%83%AD%E3%83%91%E3%83%B3%E3%82%AC%E3%82%B9_%E5%8E%9F%E6%B2%B9)
-* [レーザータレット500個](http://kojim.github.io/FactorioCalculator.html?product=%E3%83%AC%E3%83%BC%E3%82%B6%E3%83%BC%E3%82%BF%E3%83%AC%E3%83%83%E3%83%88&cps=0.14&imports=%E9%9B%BB%E6%B1%A0_%E7%A1%AB%E9%85%B8_%E7%A1%AB%E9%BB%84_%E3%83%97%E3%83%AD%E3%83%91%E3%83%B3%E3%82%AC%E3%82%B9_%E5%8E%9F%E6%B2%B9_%E9%89%84%E6%9D%BF_%E9%89%84%E9%89%B1%E7%9F%B3_%E9%8A%85%E9%89%B1%E7%9F%B3_%E9%8A%85%E6%9D%BF)
+* [ソーラーパネル1000個]()
+* [蓄電池1000個]()
+* [レーザータレット500個]()
 * ロケットサイロ系
-    * [断熱材1100個](http://kojim.github.io/FactorioCalculator.html?product=%E6%96%AD%E7%86%B1%E6%9D%90&cps=0.31&imports=%E3%83%97%E3%83%A9%E3%82%B9%E3%83%81%E3%83%83%E3%82%AF%E6%A3%92_%E3%83%97%E3%83%AD%E3%83%91%E3%83%B3%E3%82%AC%E3%82%B9_%E5%8E%9F%E6%B2%B9_%E7%9F%B3%E7%82%AD_%E9%8A%85%E6%9D%BF_%E9%8A%85%E9%89%B1%E7%9F%B3_%E9%89%84%E6%9D%BF_%E9%89%84%E9%89%B1%E7%9F%B3)
-    * [ロケット燃料1050個](http://kojim.github.io/FactorioCalculator.html?product=%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88%E7%87%83%E6%96%99&cps=0.29&imports=%E5%9B%BA%E5%BD%A2%E7%87%83%E6%96%99_%E8%BB%BD%E6%B2%B9_%E5%8E%9F%E6%B2%B9)
-    * [ロケット制御ユニット1000個](http://kojim.github.io/FactorioCalculator.html?product=%E3%83%AD%E3%82%B1%E3%83%83%E3%83%88%E5%88%B6%E5%BE%A1%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88&cps=0.28&imports=%E9%89%84%E6%9D%BF_%E9%89%84%E9%89%B1%E7%9F%B3_%E9%8A%85%E9%89%B1%E7%9F%B3_%E9%8A%85%E6%9D%BF_%E3%83%97%E3%83%A9%E3%82%B9%E3%83%81%E3%83%83%E3%82%AF%E6%A3%92_%E7%9F%B3%E7%82%AD_%E5%88%B6%E5%BE%A1%E5%9F%BA%E7%9B%A4_%E7%A1%AB%E9%85%B8_%E7%A1%AB%E9%BB%84_%E3%83%97%E3%83%AD%E3%83%91%E3%83%B3%E3%82%AC%E3%82%B9_%E5%8E%9F%E6%B2%B9)
+    * [断熱材1100個]()
+    * [ロケット燃料1050個]()
+    * [ロケット制御ユニット1000個]()
     * その他ロケットサイロ&衛星素材
-        * [鋼材1000個](http://kojim.github.io/FactorioCalculator.html?product=%E9%8B%BC%E6%9D%90&cps=0.28&imports=%E9%89%84%E9%89%B1%E7%9F%B3_%E9%89%84%E6%9D%BF)
-        * [コンクリート1000個](http://kojim.github.io/FactorioCalculator.html?product=%E3%82%B3%E3%83%B3%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%88&cps=0.28&imports=)
-        * [制御基盤300個](http://kojim.github.io/FactorioCalculator.html?product=%E5%88%B6%E5%BE%A1%E5%9F%BA%E7%9B%A4&cps=0.083&imports=%E9%89%84%E9%89%B1%E7%9F%B3_%E9%89%84%E6%9D%BF_%E9%8A%85%E9%89%B1%E7%9F%B3_%E9%8A%85%E6%9D%BF_%E7%99%BA%E5%B1%95%E5%9B%9E%E8%B7%AF_%E3%83%97%E3%83%A9%E3%82%B9%E3%83%81%E3%83%83%E3%82%AF%E6%A3%92_%E7%A1%AB%E9%85%B8_%E7%A1%AB%E9%BB%84_%E5%8E%9F%E6%B2%B9_%E7%9F%B3%E7%82%AD)
-        * [電気エンジンユニット200個](http://kojim.github.io/FactorioCalculator.html?product=%E9%9B%BB%E6%B0%97%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E3%83%A6%E3%83%8B%E3%83%83%E3%83%88&cps=0.056&imports=%E9%8A%85%E6%9D%BF_%E9%8A%85%E9%89%B1%E7%9F%B3_%E9%89%84%E6%9D%BF_%E9%89%84%E9%89%B1%E7%9F%B3)
+        * [鋼材1000個]()
+        * [コンクリート1000個]()
+        * [制御基盤300個]()
+        * [電気エンジンユニット200個]()
 
 
 # Tips
