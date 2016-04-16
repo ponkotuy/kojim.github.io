@@ -106,27 +106,26 @@ title: Factorio自分用プレイメモ
             * インサータ
             * リペアキット
             * 弾薬
+            * 歯車
             * パイプ
     * 備考
         * 日用品を作るために広いスペースが必要。32マス程の幅があると理想。
         * ラインの末尾に銅鉄格納用チェストを配置しておくと便利。
+        * ベルトコンベア2はフル稼働させると大量の鉄を必要とするので注意 [参考]( http://kojim.github.io/FactorioCalculator.html#product=FastTransportBelt&cps=1.5&imports=&language=Japanese )
 * 2nd line
     * 役割: 電子回路と鋼材、ソーラーパネルの量産
     * 搬入資源
-        * 鉄(ベルトコンベア1/秒間10個)
-        * 銅(ベルトコンベア1/秒間10個)
+        * 鉄(ベルトコンベア2/秒間10個)
+        * 銅(ベルトコンベア2/秒間10個)
     * 生産物
         * 日用中間素材
             * [電子回路(毎秒4個)]( http://kojim.github.io/FactorioCalculator.html#product=ElectronicCircuit&cps=4&imports=&language=Japanese )
             * [鋼材(毎秒1個)]( http://kojim.github.io/FactorioCalculator.html#product=SteelPlate&cps=1&imports=&language=Japanese )
         * 他
-            * [ソーラーパネル(毎秒0.225)]( http://kojim.github.io/FactorioCalculator.html#product=SolarPanel&cps=0.225&imports=&language=Japanese )
+            * [ソーラーパネル(毎秒0.3個)]( http://kojim.github.io/FactorioCalculator.html#product=SolarPanel&cps=0.3&imports=&language=Japanese )
     * 備考
         * 本格的な鋼材生産は電気炉が揃ってからでよい。
         * 早めに作成し電子回路を作りためておかないと、建造ロボの製造がいくら待っても終わらない。
-        * ソーラーパネルラインが稼動すると銅鉄を全消費するので注意。
-        * 後々ベルトコンベアを高速なものに置き換える前提でスペースに余裕を持たせておくと良いかも
-        * ソーラーパネルはここで作ると楽。中盤で1000個、クリア直前に2000個あれば十分だろう。
 * 3rd line
     * 役割: 原油系資源を使う物資の量産
     * 搬入資源
@@ -135,14 +134,12 @@ title: Factorio自分用プレイメモ
         * プロパンガス
         * 潤滑油
     * 生産物
-        * [電池(毎秒2個)]( http://kojim.github.io/FactorioCalculator.html#product=Battery&cps=2&imports=&language=Japanese )
+        * [電池(毎秒4個)]( http://kojim.github.io/FactorioCalculator.html#product=Battery&cps=4&imports=&language=Japanese )
         * [プラスチック(毎秒8個)]( http://kojim.github.io/FactorioCalculator.html#product=PlasticBar&cps=8&imports=&language=Japanese )
-        * [飛行ロボットフレーム(毎秒0.1個)]( http://kojim.github.io/FactorioCalculator.html#product=FlyingRobotFrame&cps=0.1&imports=&language=Japanese )
+        * [飛行ロボットフレーム(毎秒0.075個)]( http://kojim.github.io/FactorioCalculator.html#product=FlyingRobotFrame&cps=0.075&imports=&language=Japanese )
         * [蓄電池(毎秒0.225個)]( http://kojim.github.io/FactorioCalculator.html#product=BasicAccumulator&cps=0.225&imports=&language=Japanese )
     * 備考
-        * SP3製造ラインが電池を毎秒1消費するので、蓄電池やレーザータレットの生産に使えるのはその余り。
-        * 飛行ロボットフレームは2ライン用意するとストレスが少ない。
-        * 終盤必要になってくるので、電気エンジンユニットを1つ余分に作ってチェストに貯めておく。
+        * 終盤必要になってくるので、電気エンジンユニットも作りためておこう。
 * 4th line
     * 役割: 発展回路の量産
     * 搬入資源
@@ -150,9 +147,9 @@ title: Factorio自分用プレイメモ
         * 銅(ベルトコンベア2/秒間20個)
         * プラスチック(ベルトコンベア1/秒間10個)
     * 生産物
-        * 発展回路
-            * 秒間生産: 4個(組立機数:32)
-            * 秒間消費: 鉄8, 銅20, プラスチック8
+        * [発展回路(毎秒3.75個)]( http://kojim.github.io/FactorioCalculator.html#product=AdvancedCircuit&cps=3.75&imports=&language=Japanese )
+    * 備考
+        * 発展回路組立機は中盤は8個で足りる。終盤は32個でも十分。40個あれば磐石。
 * 5th line
     * 役割: SP3の生産
     * 搬入資源
@@ -161,56 +158,28 @@ title: Factorio自分用プレイメモ
         * 発展回路
         * 電池
     * 生産物
-        * スマートインサータ(SP3用)
-            * 秒間生産: 1個(組立機数:1)
-            * 秒間消費: 鉄12, 銅10.5
-        * 鋼材
-            * 秒間生産: 1個(組立機数:9)
-            * 秒間消費: 鉄5
-        * SP3
+        * SP3 ( http://kojim.github.io/FactorioCalculator.html#product=SciencePack3&cps=0.75&imports=&language=Japanese )
             * 秒間生産: 1個(組立機数:12)
     * 備考
+        * SP3用の鋼材、スマートインサータもここで生産。
         * 12個あるSP3の組立機を一列に並べるのはさすがに難しい。おとなしく2列にしよう。
         * 電気炉が手に入るまでは鋼材は手で運んでくるのが無難。
 * 6th line
-    * 役割: 制御基盤の量産
+    * 役割: 制御基盤と生産速度モジュール1の量産
     * 搬入資源
         * 鉄(ベルトコンベア2/秒間20個)
         * 銅(ベルトコンベア2/秒間20個)
         * 発展回路
         * 硫酸
     * 生産物
-        * [制御基盤]()
+        * 制御基盤
+        * [生産速度モジュール1(毎秒0.6個)]( http://kojim.github.io/FactorioCalculator.html#product=SpeedModule1&cps=0.6&imports=&language=Japanese )
     * 備考
         * 大量消費する電子回路を搬入してくるのは現実的でないのでここで銅鉄から生産しよう。
-* その他メモ
-    * プラスチック組立機は5or6個用意するのが適当？
-    * 改良案(サイエンスパック毎秒1個生産体制)
-        * 1st lineからスマートインサータを外し、日用品をこちらに持ってくる。
-        * 3rd lineが不要になるので、そこでスマートインサータ(組立機数:2), 鋼材(電気炉:10)を作成し、SP3用に充てる。ベルコンは1ではキャパシティが足りないので2を利用する。
-        * 電池の必要数が読めないが、とりあえずプラントは10個用意する。おそらくプロパン不足に陥ると思うので原油精製施設は8個作成。
-        * 日用品ラインでパイプと歯車を200個ずつ程度作っておく。それぞれ原油系施設とロボポートの作成時大量に必要になるので時間節約のため。取りに行くのが面倒で使わないかもしれないが、念のため。
-
-
-# 各種試算
-60分で全素材を集める場合に必要な施設数。簡単に用意できる素材については割愛。
-
-* [ソーラーパネル1000個]()
-* [蓄電池1000個]()
-* [レーザータレット500個]()
-* ロケットサイロ系
-    * [断熱材1100個]()
-    * [ロケット燃料1050個]()
-    * [ロケット制御ユニット1000個]()
-    * その他ロケットサイロ&衛星素材
-        * [鋼材1000個]()
-        * [コンクリート1000個]()
-        * [制御基盤300個]()
-        * [電気エンジンユニット200個]()
-
+        * 生産速度モジュールの量産はロケットサイロの研究が終わるまでは必要ない。それまではパワーアーマーMK2のためのモジュール生産をしていてもらおう。
 
 # Tips
-サイエンスパックの生産は秒間0.5個(組立機換算で各3つ)で十分。SP1と2はその気になれば秒間2個くらいは余裕で作れるが、研究だけ急いでもすぐにそれ以外がボトルネックになってくる。そして何よりサイエンスパック3をそれにあわせて量産するのがキツい。
+サイエンスパックの生産は秒間0.75個で十分。SP1と2はその気になれば、その倍くらい余裕で作れるが、研究だけ急いでもすぐにそれ以外がボトルネックになってくる。そして何よりサイエンスパック3をそれにあわせて量産するのがキツい。
 
 精錬は、電気掘削機20で採掘した鉱石をベルトコンベア1の両側に乗せて運搬し、電気炉18で精錬するのが良い。
 ベルトコンベア2を使えばもっと流量は増やせるが、縦に長すぎるラインは扱いが面倒。
