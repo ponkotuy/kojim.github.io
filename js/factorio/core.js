@@ -221,7 +221,7 @@ var advanced_circuit = new AssemblyProduct(
   "AdvancedCircuit", "発展回路", 8, 1, [[electronic_circuit, 2], [plastic_bar, 2], [copper_cable, 4]]
 );
 var processing_unit = new AssemblyProduct(
-  "ProcessingUnit", "制御基盤", 15, 1, [[electronic_circuit, 20], [advanced_circuit, 2], [sulfuric_acid, 0.5]]
+  "ProcessingUnit", "制御基板", 15, 1, [[electronic_circuit, 20], [advanced_circuit, 2], [sulfuric_acid, 0.5]]
 );
 
 // -----------------
@@ -334,6 +334,9 @@ var stone_wall = new AssemblyProduct(
 var basic_bullet_magazine = new AssemblyProduct(
   "BasicBulletMagazine", "通常弾薬", 2, 1, [[iron_plate, 2]]
 );
+var piercing_bullet_magazine = new AssemblyProduct(
+  "PiercingBulletMagazine", "貫通弾薬", 3, 1, [[copper_plate, 5], [steel_plate, 1]]
+);
 var laser_turret = new AssemblyProduct(
   "LaserTurret", "レーザータレット", 20, 1, [[steel_plate, 20], [electronic_circuit, 20], [battery, 12]]
 );
@@ -373,7 +376,7 @@ var products = [
 	speed_module1, speed_module2, speed_module3,
 	productivity_module1, productivity_module2, productivity_module3,
 	effectivity_module1, effectivity_module2, effectivity_module3,
-	stone_wall, basic_bullet_magazine, laser_turret, rocket, power_armor_mk2,
+	stone_wall, basic_bullet_magazine, piercing_bullet_magazine, laser_turret, rocket, power_armor_mk2,
 	solid_fuel, rocket_fuel, rocket_control_unit, low_density_structure
 ];
 

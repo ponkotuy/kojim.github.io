@@ -94,8 +94,8 @@ title: Factorio自分用プレイメモ
 * 1st line
     * 役割: SP1と2、および日用品の生産
     * 搬入資源
-        * 鉄(ベルトコンベア1/秒間10個)
-        * 銅(ベルトコンベア1/秒間10個)
+        * 鉄(ベルトコンベア2/秒間20個)
+        * 銅(ベルトコンベア2/秒間20個)
     * 生産物
         * [SP1(毎秒0.75個)]( http://kojim.github.io/FactorioCalculator.html#product=SciencePack1&cps=0.75&imports=&language=Japanese )
         * [SP2(毎秒0.75個)]( http://kojim.github.io/FactorioCalculator.html#product=SciencePack2&cps=0.75&imports=&language=Japanese )
@@ -108,6 +108,7 @@ title: Factorio自分用プレイメモ
             * 弾薬
             * 歯車
             * パイプ
+            * 電子回路
     * 備考
         * 日用品を作るために広いスペースが必要。32マス程の幅があると理想。
         * ラインの末尾に銅鉄格納用チェストを配置しておくと便利。
@@ -115,8 +116,8 @@ title: Factorio自分用プレイメモ
 * 2nd line
     * 役割: 電子回路と鋼材、ソーラーパネルの量産
     * 搬入資源
-        * 鉄(ベルトコンベア2/秒間10個)
-        * 銅(ベルトコンベア2/秒間10個)
+        * 鉄(ベルトコンベア2/秒間20個)
+        * 銅(ベルトコンベア2/秒間20個)
     * 生産物
         * 日用中間素材
             * [電子回路(毎秒4個)]( http://kojim.github.io/FactorioCalculator.html#product=ElectronicCircuit&cps=4&imports=&language=Japanese )
