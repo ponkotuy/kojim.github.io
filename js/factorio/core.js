@@ -362,6 +362,19 @@ var low_density_structure = new AssemblyProduct(
   "LowDensityStructure", "断熱材", 30, 1, [[steel_plate, 10], [copper_plate, 5], [plastic_bar, 5]]
 );
 
+// -----------------
+// 組立機
+// -----------------
+var assembling_machine_1 = new AssemblyProduct(
+  "AssemblingMachine1", "組立機1", 0.5, 1, [[electronic_circuit, 3], [iron_gear_wheel, 5], [iron_plate, 9]]
+);
+var assembling_machine_2 = new AssemblyProduct(
+  "AssemblingMachine2", "組立機2", 0.5, 1, [[electronic_circuit, 3], [iron_gear_wheel, 5], [iron_plate, 9], [assembling_machine_1, 1]]
+);
+var assembling_machine_3 = new AssemblyProduct(
+  "AssemblingMachine3", "組立機3", 0.5, 1, [[assembling_machine_2, 2], [speed_module1, 4]]
+);
+
 var products = [
 	iron_ore, copper_ore, coal, stone, iron_plate, copper_plate, stone_brick, steel_plate, concrete,
 	crude_oil, petroleum_gas, light_oil, heavy_oil, lubricant,
@@ -377,7 +390,8 @@ var products = [
 	productivity_module1, productivity_module2, productivity_module3,
 	effectivity_module1, effectivity_module2, effectivity_module3,
 	stone_wall, basic_bullet_magazine, piercing_bullet_magazine, laser_turret, rocket, power_armor_mk2,
-	solid_fuel, rocket_fuel, rocket_control_unit, low_density_structure
+	solid_fuel, rocket_fuel, rocket_control_unit, low_density_structure,
+	assembling_machine_1, assembling_machine_2, assembling_machine_3
 ];
 
 function getProductByName(name) {
