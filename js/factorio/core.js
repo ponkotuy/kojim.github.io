@@ -251,8 +251,14 @@ var basic_inserter = new AssemblyProduct(
 var fast_inserter = new AssemblyProduct(
   "FastInserter", "高速インサーター", 0.5, 1, [[electronic_circuit, 2], [iron_plate, 2], [basic_inserter, 1]]
 );
-var smart_inserter = new AssemblyProduct(
-  "SmartInsterter", "スマートインサーター", 0.5, 1, [[fast_inserter, 1], [electronic_circuit, 4]]
+var filter_inserter = new AssemblyProduct(
+  "FilterInserter", "フィルターインサーター", 0.5, 1, [[fast_inserter, 1], [electronic_circuit, 4]]
+);
+var stack_inserter = new AssemblyProduct(
+  "StackInserter", "スタックインサーター", 0.5, 1, [[fast_inserter, 1], [iron_gear_wheel, 15], [electronic_circuit, 15], [advanced_circuit, 1]]
+);
+var stack_filter_inserter = new AssemblyProduct(
+  "StackFilterInserter", "スタックフィルターインサーター", 0.5, 1, [[stack_inserter, 1], [electronic_circuit, 5]]
 );
 
 // -----------------
@@ -291,7 +297,7 @@ var science_pack_2 = new AssemblyProduct(
   "SciencePack2", "サイエンスパック2", 6, 1, [[basic_transport_belt, 1], [basic_inserter, 1]]
 );
 var science_pack_3 = new AssemblyProduct(
-  "SciencePack3", "サイエンスパック3", 12, 1, [[battery, 1], [advanced_circuit, 1], [smart_inserter, 1], [steel_plate, 1]]
+  "SciencePack3", "サイエンスパック3", 12, 1, [[battery, 1], [advanced_circuit, 1], [filter_inserter, 1], [steel_plate, 1]]
 );
 
 // -----------------
@@ -368,7 +374,7 @@ var products = [
 	iron_gear_wheel, copper_cable, pipe, electronic_circuit, advanced_circuit, processing_unit,
 	basic_transport_belt, fast_transport_belt, express_transport_belt,
 	splitter, fast_splitter, express_splitter,
-	basic_inserter, fast_inserter, smart_inserter,
+	basic_inserter, fast_inserter, filter_inserter, stack_inserter, stack_filter_inserter,
 	plastic_bar, sulfur, sulfuric_acid, explosives,
 	battery, engine_unit, electric_engine_unit, flying_robot_frame,
 	solar_panel, basic_accumulator,
