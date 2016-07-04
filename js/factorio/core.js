@@ -236,6 +236,15 @@ var fast_transport_belt = new AssemblyProduct(
 var express_transport_belt = new AssemblyProduct(
   "ExpressTransportBelt", "超高速ベルトコンベア", 0.5, 1, [[fast_transport_belt, 1], [iron_gear_wheel, 5], [lubricant, 2]]
 );
+var basic_underground_belt = new AssemblyProduct(
+  "BasicUndergroundBelt", "地下輸送ベルト", 1, 2, [[iron_plate, 10], [basic_transport_belt, 5]]
+);
+var fast_underground_belt = new AssemblyProduct(
+  "FastUndergroundBelt", "高速地下輸送ベルト", 0.5, 2, [[iron_gear_wheel, 20], [basic_underground_belt, 2]]
+);
+var express_underground_belt = new AssemblyProduct(
+  "ExpressUndergroundBelt", "超高速地下輸送ベルト", 0.5, 2, [[iron_gear_wheel, 40], [fast_underground_belt, 2], [lubricant, 4]]
+);
 var splitter = new AssemblyProduct(
   "Splitter", "分配器", 1, 1, [[electronic_circuit, 5], [iron_plate, 5], [basic_transport_belt, 4]]
 );
@@ -367,6 +376,7 @@ var products = [
 	crude_oil, petroleum_gas, light_oil, heavy_oil, lubricant,
 	iron_gear_wheel, copper_cable, pipe, electronic_circuit, advanced_circuit, processing_unit,
 	basic_transport_belt, fast_transport_belt, express_transport_belt,
+	basic_underground_belt, fast_underground_belt, express_underground_belt,
 	splitter, fast_splitter, express_splitter,
 	basic_inserter, fast_inserter, smart_inserter,
 	plastic_bar, sulfur, sulfuric_acid, explosives,
