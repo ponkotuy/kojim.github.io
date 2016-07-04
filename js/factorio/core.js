@@ -245,8 +245,14 @@ var fast_splitter = new AssemblyProduct(
 var express_splitter = new AssemblyProduct(
   "ExpressSplitter", "超高速分配器", 2, 1, [[fast_splitter, 1], [iron_gear_wheel, 10], [advanced_circuit, 10], [lubricant, 8]]
 );
+var burner_inserter = new AssemblyProduct(
+  "BurnerInserter", "燃料式インサーター", 0.5, 1, [[iron_plate, 1], [iron_gear_wheel, 1]]
+);
 var basic_inserter = new AssemblyProduct(
   "BasicInserter", "インサーター", 0.5, 1, [[electronic_circuit, 1], [iron_gear_wheel, 1], [iron_plate, 1]]
+);
+var long_handed_inserter = new AssemblyProduct(
+  "LongHandedInserter", "ロングアームインサーター", 0.5, 1, [[iron_gear_wheel, 1], [iron_plate, 1], [basic_inserter, 1]]
 );
 var fast_inserter = new AssemblyProduct(
   "FastInserter", "高速インサーター", 0.5, 1, [[electronic_circuit, 2], [iron_plate, 2], [basic_inserter, 1]]
@@ -368,7 +374,7 @@ var products = [
 	iron_gear_wheel, copper_cable, pipe, electronic_circuit, advanced_circuit, processing_unit,
 	basic_transport_belt, fast_transport_belt, express_transport_belt,
 	splitter, fast_splitter, express_splitter,
-	basic_inserter, fast_inserter, smart_inserter,
+	burner_inserter, basic_inserter, long_handed_inserter, fast_inserter, smart_inserter,
 	plastic_bar, sulfur, sulfuric_acid, explosives,
 	battery, engine_unit, electric_engine_unit, flying_robot_frame,
 	solar_panel, basic_accumulator,
